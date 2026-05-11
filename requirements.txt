@@ -1,0 +1,6 @@
+pandas
+nflreadpy
+pyarrow
+pytest
+jupyter
+polars
