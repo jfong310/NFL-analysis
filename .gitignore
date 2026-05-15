@@ -1,0 +1,15 @@
+__pycache__/
+.pytest_cache/
+.venv/
+.env
+
+# Generated data
+/data/raw/
+/data/processed/
+/data/snapshots/
+/data/audit/samples/
+*.parquet
+
+# Keep lightweight audit artifacts tracked
+!/data/audit/source_inventory.csv
+!/data/audit/data_audit.md
