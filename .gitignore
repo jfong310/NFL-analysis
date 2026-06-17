@@ -13,3 +13,5 @@ __pycache__/
 # Keep lightweight audit artifacts tracked
 !/data/audit/source_inventory.csv
 !/data/audit/data_audit.md
+
+!/data/audit/scoring_validation_report.md
