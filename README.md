@@ -4,7 +4,7 @@
 `fantasy_nfl_model` is a public-data fantasy football analysis project. The long-term objective is to estimate probabilistic player outcomes and compare those projections against draft cost (ADP) to identify excess value.
 
 ## Current Status
-**Chunks 1 and 2 are complete.** The accepted audit, scoring, and target pipeline covers 2016-2025.
+**Chunks 1 through 3 are complete.** The accepted audit, scoring, target, and feature pipeline covers 2016-2025 and creates 2026 prediction rows.
 
 Included now:
 - Package/repository scaffolding
@@ -16,11 +16,11 @@ Included now:
 - Independently calculated standard, half-PPR, and PPR scoring
 - Player-season targets, volatility, positional finishes, and replacement value
 - Exact standard/PPR reconciliation against nflverse
+- Leakage-safe production, usage, volatility, availability, profile, and team-context features
 
 Not included yet:
 - ML modeling
 - ADP ingestion/value scoring
-- Advanced feature engineering
 
 ## Installation
 ```bash
@@ -99,3 +99,34 @@ The command accepts `--start-season`, `--end-season`, and `--refresh`.
 - Replacement ranks default to QB13, RB37, WR49, and TE13.
 - Replacement-adjusted points compare season totals with the replacement-ranked player's season total.
 - ADP ingestion and ML modeling remain future chunks.
+
+
+## Chunk 3: Leakage-Safe Feature Engineering
+
+Chunk 3 creates one row per player and prediction season using data through the prior season only.
+
+### Run Feature Engineering
+
+```bash
+python scripts/run_feature_pipeline.py
+```
+
+The command accepts `--start-season`, `--end-season`, and `--refresh`.
+
+### Outputs
+
+- `data/processed/model_training_table.parquet`
+- `data/audit/feature_dictionary.md`
+- `data/audit/leakage_audit.md`
+
+### Feature Families
+
+- Player age, experience, and career history
+- Prior-year and recency-weighted production
+- Targets, carries, receptions, passing attempts, snaps, and expected opportunity
+- Weekly production, usage, and snap volatility
+- Games missed, injury-report frequency, and career availability
+- Prior-team pass/rush rate, offensive plays, and points per game
+
+Historical outcomes cover prediction seasons 2017-2025. Rows for 2026 have blank targets.
+True rookies and players returning after a full season away require a later rookie/offseason extension.

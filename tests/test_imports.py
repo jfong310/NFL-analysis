@@ -10,6 +10,8 @@ def test_core_imports():
         "fantasy_nfl.config.scoring",
         "fantasy_nfl.transform.scoring",
         "fantasy_nfl.transform.targets",
+        "fantasy_nfl.transform.features",
+        "fantasy_nfl.audit.feature_audit",
         "fantasy_nfl.audit.scoring_validation",
     ]
     for name in modules:
