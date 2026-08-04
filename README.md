@@ -4,18 +4,21 @@
 `fantasy_nfl_model` is a public-data fantasy football analysis project. The long-term objective is to estimate probabilistic player outcomes and compare those projections against draft cost (ADP) to identify excess value.
 
 ## Current Status
-This repository currently implements **Chunk 1: scaffolding + data audit**.
+**Chunks 1 and 2 are complete.** The accepted audit, scoring, and target pipeline covers 2016-2025.
 
 Included now:
 - Package/repository scaffolding
 - Centralized path and season configuration
 - Defensive nflverse (`nflreadpy`) ingestion wrappers
-- Data-source audit pipeline with CSV/Markdown outputs
-- Basic tests and audit notebook
+- Parquet raw-data cache with JSON provenance
+- Canonical QB/RB/WR/TE player-week table built on normalized IDs
+- Join cardinality, match-rate, schema, and duplicate-row guardrails
+- Independently calculated standard, half-PPR, and PPR scoring
+- Player-season targets, volatility, positional finishes, and replacement value
+- Exact standard/PPR reconciliation against nflverse
 
 Not included yet:
 - ML modeling
-- Fantasy scoring engine
 - ADP ingestion/value scoring
 - Advanced feature engineering
 
@@ -39,62 +42,60 @@ python -m scripts.run_data_audit
 python scripts/run_data_audit.py --start-season 2020 --end-season 2025
 ```
 
+
+Cached pulls are reused by default. Force a fresh download when required:
+```bash
+python scripts/run_data_audit.py --refresh
+```
+
 ## Run Tests
 ```bash
 pytest
 ```
 
-## Expected Outputs
-After the audit script runs, you should see:
+## Chunk 1 Outputs
+
 - `data/audit/source_inventory.csv`
 - `data/audit/data_audit.md`
+- `data/audit/sample_player_week.parquet`
+- `data/audit/player_id_join_report.csv`
 - Sample dataset extracts in `data/audit/samples/` (parquet preferred, CSV fallback)
+- Raw parquet caches and provenance records in `data/raw/`
 
 ## Data Source Notes
 - Core data source is `nflverse` via `nflreadpy`.
 - Loader wrappers are intentionally defensive because `nflreadpy` APIs can evolve by version.
 - The audit records explicit success/failure for each dataset and does not fail the whole run if one dataset is unavailable.
 
+- Source enrichment uses IDs and explicit join keys rather than player-name matching.
+- Injury matches are expected to be sparse because healthy players have no injury row.
+- Raw source pulls record the installed `nflreadpy` version.
 
 ## Chunk 2: Fantasy Scoring + Target Construction
 
-Chunk 2 adds reliable fantasy scoring and season-level target construction (no ADP ingestion or ML modeling yet).
+Chunk 2 independently reconstructs fantasy scoring and creates regular-season player targets for 2016-2025.
 
 ### Run Scoring/Target Construction
+
 ```bash
-python scripts/run_scoring_targets.py
+python scripts/run_scoring_pipeline.py
 ```
 
-Module mode:
-```bash
-python -m scripts.run_scoring_targets
-```
-
-Custom seasons:
-```bash
-python scripts/run_scoring_targets.py --start-season 2020 --end-season 2025
-```
-
-Custom input path:
-```bash
-python scripts/run_scoring_targets.py --input-path data/audit/samples/player_stats_weekly_sample.parquet
-```
+The command accepts `--start-season`, `--end-season`, and `--refresh`.
 
 ### Outputs
-- `data/processed/player_week_scored.parquet` (CSV fallback)
-- `data/processed/player_season_targets.parquet` (CSV fallback)
+
+- `data/processed/player_week_scored.parquet`
+- `data/processed/player_season_targets.parquet`
 - `data/audit/scoring_validation_report.md`
 
-### Scoring Assumptions
-- Standard / half-PPR / PPR generated each run.
-- Passing: 0.04/yard, 4 pass TD, -2 INT, +2 pass 2PT.
-- Rushing: 0.1/yard, 6 rush TD, +2 rush 2PT.
-- Receiving: receptions (0, 0.5, 1), 0.1/yard, 6 rec TD, +2 rec 2PT.
-- Fumbles lost: -2.
-- Optional return/special teams/offensive FR TD columns are included when present.
+### Assumptions
 
-### Season Target Assumptions
-- Season targets default to regular season rows (`season_type == "REG"`) unless `--include-postseason` is passed.
-- `games_played` counts weeks with non-zero fantasy points OR offensive usage (attempts/carries/targets/receptions/snaps), with row-count fallback when needed.
-- Replacement baselines are rank-based defaults: QB12, RB24, WR36, TE12.
-- This chunk intentionally excludes ADP ingestion and ML model training; those are future chunks.
+- Standard, half-PPR, and PPR scores are generated every run.
+- Standard and PPR calculations reconcile exactly with nflverse reference scores.
+- Only offensive sack, rushing, and receiving fumbles lost receive the -2 penalty.
+- Targets include regular-season QB, RB, WR, and TE player-weeks.
+- Games played count scored weekly-stat rows.
+- Replacement ranks default to QB13, RB37, WR49, and TE13.
+- Replacement-adjusted points compare season totals with the replacement-ranked player's season total.
+- ADP ingestion and ML modeling remain future chunks.

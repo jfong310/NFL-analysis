@@ -11,6 +11,7 @@ except Exception:  # noqa: BLE001
     pd = None
 
 from fantasy_nfl.config.paths import AUDIT_DIR, AUDIT_SAMPLES_DIR, ensure_data_dirs
+from fantasy_nfl.ingest.cache import load_or_fetch
 from fantasy_nfl.ingest.nflverse import (
     load_ff_opportunity_safe,
     load_ff_playerids_safe,
@@ -21,6 +22,7 @@ from fantasy_nfl.ingest.nflverse import (
     load_schedules_safe,
     load_snap_counts_safe,
 )
+from fantasy_nfl.transform.player_week import build_player_week
 from fantasy_nfl.utils.io import save_sample, write_markdown
 from fantasy_nfl.utils.logging import get_logger
 
@@ -51,6 +53,8 @@ def _summarize_dataset(name: str, result: dict, seasons: list[int]) -> dict:
         "max_season": None,
         "unique_players": None,
         "unique_teams": None,
+        "cache_status": result.get("cache_status", ""),
+        "cache_path": result.get("cache_path", ""),
         "missingness_summary": "",
         "sample_output_path": "",
         "error_message": result.get("error", ""),
@@ -89,7 +93,22 @@ def _summarize_dataset(name: str, result: dict, seasons: list[int]) -> dict:
     return row
 
 
-def _build_markdown(report_df: pd.DataFrame, seasons: list[int]) -> str:
+def _markdown_table(frame: pd.DataFrame) -> str:
+    """Render Markdown without pandas' optional tabulate dependency."""
+    columns = list(frame.columns)
+    lines = [
+        "| " + " | ".join(columns) + " |",
+        "| " + " | ".join("---" for _ in columns) + " |",
+    ]
+    for row in frame.itertuples(index=False, name=None):
+        values = [str(value).replace("|", "\\|") for value in row]
+        lines.append("| " + " | ".join(values) + " |")
+    return "\n".join(lines)
+
+
+def _build_markdown(
+    report_df: pd.DataFrame, seasons: list[int], join_report: pd.DataFrame | None = None
+) -> str:
     now = datetime.now(timezone.utc).isoformat()
     success = report_df[report_df["load_status"] == "success"]["dataset_name"].tolist()
     failed = report_df[report_df["load_status"] == "failed"]["dataset_name"].tolist()
@@ -102,7 +121,9 @@ def _build_markdown(report_df: pd.DataFrame, seasons: list[int]) -> str:
         "",
         "## Dataset Summary",
         "",
-        report_df[["dataset_name", "load_status", "row_count", "column_count", "sample_output_path"]].to_markdown(index=False),
+        _markdown_table(
+            report_df[["dataset_name", "load_status", "row_count", "column_count", "cache_status"]]
+        ),
         "",
         "## Successful Loads",
         "",
@@ -120,51 +141,73 @@ def _build_markdown(report_df: pd.DataFrame, seasons: list[int]) -> str:
         keys = rec.get("join_keys_found", "") or "None detected"
         lines.append(f"- **{rec['dataset_name']}**: {keys}")
 
+    if join_report is not None and not join_report.empty:
+        lines.extend(
+            [
+                "",
+                "## Player-Week Join Quality",
+                "",
+                _markdown_table(join_report[["dataset", "eligible_rows", "matched_rows", "match_rate", "right_duplicate_key_rows"]]),
+            ]
+        )
+
+
     lines.extend(
         [
             "",
             "## Initial Observations",
             "",
-            "- This report focuses on loading viability and key-schema discovery only.",
-            "- No modeling, fantasy scoring, ADP ingestion, or feature engineering is implemented in this chunk.",
+            "- Raw pulls are cached as parquet files with JSON provenance records.",
+            "- The canonical sample contains regular-season QB/RB/WR/TE player-weeks.",
             "",
-            "## Recommended Next Steps",
+            "## Chunk 1 Artifacts",
             "",
-            "1. Stabilize final nflreadpy loader names based on your installed version.",
-            "2. Add a light ID crosswalk strategy (player/team key normalization).",
-            "3. Add incremental caching strategy in `data/raw/` for repeatable pulls.",
+            "- `data/audit/source_inventory.csv`",
+            "- `data/audit/sample_player_week.parquet`",
+            "- `data/audit/player_id_join_report.csv`",
+            "- Per-source samples in `data/audit/samples/`",
         ]
     )
     return "\n".join(lines)
 
 
-def run_data_audit(seasons: list[int]):
+def run_data_audit(seasons: list[int], *, refresh: bool = False):
     """Run data-source audit and persist inventory artifacts."""
     if pd is None:
         raise ImportError("pandas is required to run data audit.")
     ensure_data_dirs()
     loaders = [
-        ("player_stats_weekly", lambda: load_player_stats_safe(seasons)),
-        ("rosters", lambda: load_rosters_safe(seasons)),
-        ("players", load_players_safe),
-        ("schedules", lambda: load_schedules_safe(seasons)),
-        ("snap_counts", lambda: load_snap_counts_safe(seasons)),
-        ("injuries", lambda: load_injuries_safe(seasons)),
-        ("fantasy_player_ids", load_ff_playerids_safe),
-        ("ff_opportunity_weekly", lambda: load_ff_opportunity_safe(seasons)),
+        ("player_stats_weekly", seasons, lambda: load_player_stats_safe(seasons)),
+        ("rosters", seasons, lambda: load_rosters_safe(seasons)),
+        ("players", None, load_players_safe),
+        ("schedules", seasons, lambda: load_schedules_safe(seasons)),
+        ("snap_counts", seasons, lambda: load_snap_counts_safe(seasons)),
+        ("injuries", seasons, lambda: load_injuries_safe(seasons)),
+        ("fantasy_player_ids", None, load_ff_playerids_safe),
+        ("ff_opportunity_weekly", seasons, lambda: load_ff_opportunity_safe(seasons)),
     ]
 
     rows = []
-    for name, loader in loaders:
+    datasets = {}
+    for name, cache_seasons, loader in loaders:
         logger.info("Auditing dataset: %s", name)
-        result = loader()
+        result = load_or_fetch(name, cache_seasons, loader, refresh=refresh)
         rows.append(_summarize_dataset(name, result, seasons))
+        if result.get("status") == "success" and result.get("data") is not None:
+            datasets[name] = result["data"]
 
     inventory_df = pd.DataFrame(rows)
     inventory_path = AUDIT_DIR / "source_inventory.csv"
     inventory_df.to_csv(inventory_path, index=False)
 
+    player_week, join_report = build_player_week(datasets)
+    player_week_path = AUDIT_DIR / "sample_player_week.parquet"
+    sample_player_week = player_week.groupby("season", group_keys=False).head(500).reset_index(drop=True)
+    sample_player_week.to_parquet(player_week_path, index=False)
+    join_report_path = AUDIT_DIR / "player_id_join_report.csv"
+    join_report.to_csv(join_report_path, index=False)
+
     markdown_path = AUDIT_DIR / "data_audit.md"
-    write_markdown(markdown_path, _build_markdown(inventory_df, seasons))
+    write_markdown(markdown_path, _build_markdown(inventory_df, seasons, join_report))
 
     return inventory_path, markdown_path, inventory_df

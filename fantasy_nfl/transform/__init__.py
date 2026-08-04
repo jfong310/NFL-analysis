@@ -1,1 +1,1 @@
-"""Transform modules for scoring and targets."""
+"""Data transformations for model-ready tables."""

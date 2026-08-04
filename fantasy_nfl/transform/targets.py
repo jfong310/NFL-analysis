@@ -1,116 +1,96 @@
+"""Aggregate scored player-weeks into season-level training targets."""
+
 from __future__ import annotations
+
+from collections.abc import Mapping
 
 import pandas as pd
 
-from fantasy_nfl.config.scoring import DEFAULT_SCORING_FORMAT, REPLACEMENT_BASELINES, TARGET_POSITIONS
-from fantasy_nfl.transform.scoring import ScoringMetadata, score_player_weeks
+from fantasy_nfl.config.scoring import REPLACEMENT_RANKS, SCORING_FORMATS
 
 
-USAGE_COLS = ["attempts", "carries", "targets", "receptions", "offensive_snaps", "snap_count"]
+def build_player_season_targets(
+    player_week: pd.DataFrame,
+    replacement_ranks: Mapping[str, int] = REPLACEMENT_RANKS,
+) -> pd.DataFrame:
+    """Build one row per player-season with PPR-primary and alternate-format targets."""
+    required = {
+        "player_id",
+        "player_name",
+        "season",
+        "week",
+        "position",
+        "team",
+        *[f"fantasy_points_{name}" for name in SCORING_FORMATS],
+    }
+    missing = sorted(required - set(player_week.columns))
+    if missing:
+        raise ValueError(f"Scored player-week data missing columns: {missing}")
 
+    key = ["player_id", "season", "week"]
+    duplicate_rows = int(player_week.duplicated(key, keep=False).sum())
+    if duplicate_rows:
+        raise ValueError(f"Scored data contain {duplicate_rows} duplicate player-week rows")
 
-def _duplicate_key(df: pd.DataFrame) -> list[str]:
-    preferred = ["player_id", "season", "week", "season_type"]
-    if all(c in df.columns for c in preferred):
-        return preferred
-    fallback = [c for c in ["player_name", "season", "week", "team", "recent_team"] if c in df.columns]
-    return fallback
+    work = player_week.sort_values(["player_id", "season", "week"]).copy()
+    grouped = work.groupby(["player_id", "season"], as_index=False, sort=False)
+    targets = grouped.agg(
+        player_name=("player_name", "last"),
+        position=("position", "last"),
+        team=("team", "last"),
+        games_played=("week", "size"),
+        first_week=("week", "min"),
+        last_week=("week", "max"),
+        total_fantasy_points_standard=("fantasy_points_standard", "sum"),
+        total_fantasy_points_half_ppr=("fantasy_points_half_ppr", "sum"),
+        total_fantasy_points_ppr=("fantasy_points_ppr", "sum"),
+        weekly_std_dev=("fantasy_points_ppr", lambda values: float(values.std(ddof=0))),
+    )
 
+    for scoring_format in SCORING_FORMATS:
+        total_column = f"total_fantasy_points_{scoring_format}"
+        targets[f"points_per_game_{scoring_format}"] = (
+            targets[total_column] / targets["games_played"]
+        )
 
-def _dedupe(df: pd.DataFrame) -> tuple[pd.DataFrame, dict]:
-    key = _duplicate_key(df)
-    if not key:
-        return df.copy(), {"duplicate_count": 0, "duplicate_strategy": "no-key-no-dedupe"}
-    dupes = int(df.duplicated(subset=key).sum())
-    return df.drop_duplicates(subset=key, keep="first").copy(), {"duplicate_count": dupes, "duplicate_strategy": "drop_duplicates_keep_first", "duplicate_key": key}
+    targets["total_fantasy_points"] = targets["total_fantasy_points_ppr"]
+    targets["points_per_game"] = targets["points_per_game_ppr"]
+    targets["positional_finish"] = (
+        targets.groupby(["season", "position"])["total_fantasy_points"]
+        .rank(method="min", ascending=False)
+        .astype("int64")
+    )
+    for cutoff in (12, 24, 36):
+        targets[f"top_{cutoff}_finish"] = (
+            targets["positional_finish"] <= cutoff
+        ).astype("int8")
 
+    baselines: dict[tuple[int, str], tuple[int, float, float]] = {}
+    for (season, position), group in targets.groupby(["season", "position"]):
+        requested_rank = int(replacement_ranks[position])
+        ordered = group.sort_values(
+            ["total_fantasy_points", "points_per_game", "player_id"],
+            ascending=[False, False, True],
+        )
+        index = min(requested_rank, len(ordered)) - 1
+        replacement = ordered.iloc[index]
+        baselines[(int(season), position)] = (
+            min(requested_rank, len(ordered)),
+            float(replacement["points_per_game"]),
+            float(replacement["total_fantasy_points"]),
+        )
 
-def _primary_team(g: pd.DataFrame) -> object:
-    team_col = "team" if "team" in g.columns else ("recent_team" if "recent_team" in g.columns else None)
-    if team_col is None:
-        return None
-    grp = g.groupby(team_col, dropna=True).agg(active=("games_played", "sum"), latest_week=("week", "max")).reset_index()
-    grp = grp.sort_values(["active", "latest_week"], ascending=[False, False])
-    return grp.iloc[0][team_col] if not grp.empty else None
+    keys = list(zip(targets["season"].astype(int), targets["position"]))
+    targets["replacement_rank"] = [baselines[key][0] for key in keys]
+    targets["replacement_points_per_game"] = [baselines[key][1] for key in keys]
+    targets["replacement_total_fantasy_points"] = [baselines[key][2] for key in keys]
+    targets["replacement_adjusted_points"] = (
+        targets["total_fantasy_points"] - targets["replacement_total_fantasy_points"]
+    )
+    targets["replacement_adjusted_points_per_game"] = (
+        targets["replacement_adjusted_points"] / targets["games_played"]
+    )
 
-
-def build_player_week_scored(player_week_df: pd.DataFrame) -> tuple[pd.DataFrame, ScoringMetadata]:
-    return score_player_weeks(player_week_df)
-
-
-def calculate_positional_finishes(season_df: pd.DataFrame, scoring_col: str) -> pd.Series:
-    return season_df.groupby(["season", "position"])[scoring_col].rank(method="min", ascending=False).astype("Int64")
-
-
-def calculate_replacement_baselines(season_df: pd.DataFrame, scoring_col: str, baselines: dict[str, int] | None = None) -> tuple[pd.DataFrame, list[str]]:
-    baselines = baselines or REPLACEMENT_BASELINES
-    rows, warnings = [], []
-    for (season, position), g in season_df.groupby(["season", "position"]):
-        n = baselines.get(position)
-        if n is None:
-            continue
-        vals = g.sort_values(scoring_col, ascending=False)[scoring_col].tolist()
-        if not vals:
-            continue
-        idx = min(n, len(vals)) - 1
-        if len(vals) < n:
-            warnings.append(f"{season} {position}: only {len(vals)} players for baseline {n}.")
-        rows.append({"season": season, "position": position, "replacement_baseline_points": vals[idx]})
-    return pd.DataFrame(rows), warnings
-
-
-def add_replacement_adjusted_points(season_df: pd.DataFrame, scoring_col: str, suffix: str) -> tuple[pd.DataFrame, list[str]]:
-    base_df, warnings = calculate_replacement_baselines(season_df, scoring_col)
-    out = season_df.merge(base_df, on=["season", "position"], how="left")
-    out[f"replacement_baseline_points_{suffix}"] = out["replacement_baseline_points"]
-    out[f"replacement_adjusted_points_{suffix}"] = out[scoring_col] - out["replacement_baseline_points"]
-    return out.drop(columns=["replacement_baseline_points"]), warnings
-
-
-def build_player_season_targets(player_week_scored_df: pd.DataFrame, scoring_format: str = DEFAULT_SCORING_FORMAT, include_postseason: bool = False) -> tuple[pd.DataFrame, dict]:
-    df, dup_meta = _dedupe(player_week_scored_df)
-    if not include_postseason and "season_type" in df.columns:
-        df = df[df["season_type"] == "REG"].copy()
-
-    usage_cols = [c for c in USAGE_COLS if c in df.columns]
-    usage = sum((pd.to_numeric(df[c], errors="coerce").fillna(0) > 0) for c in usage_cols) > 0 if usage_cols else pd.Series(False, index=df.index)
-    points_nonzero = pd.to_numeric(df.get("fantasy_points", 0), errors="coerce").fillna(0) != 0
-    df["games_played"] = (points_nonzero | usage).astype(int)
-    df["games_with_points"] = (pd.to_numeric(df.get("fantasy_points", 0), errors="coerce").fillna(0) > 0).astype(int)
-    df["games_with_offensive_usage"] = usage.astype(int)
-
-    group_cols = [c for c in ["player_id", "player_name", "position", "season"] if c in df.columns]
-    season = df.groupby(group_cols, dropna=False).agg(
-        weeks_active=("week", "count"),
-        games_played=("games_played", "sum"),
-        games_with_points=("games_with_points", "sum"),
-        games_with_offensive_usage=("games_with_offensive_usage", "sum"),
-        weekly_mean=("fantasy_points", "mean"),
-        weekly_median=("fantasy_points", "median"),
-        weekly_std=("fantasy_points", "std"),
-        weekly_min=("fantasy_points", "min"),
-        weekly_max=("fantasy_points", "max"),
-    ).reset_index()
-    for fmt in ["standard", "half_ppr", "ppr"]:
-        col = f"fantasy_points_{fmt}"
-        if col in df.columns:
-            agg = df.groupby(group_cols, dropna=False)[col].sum().reset_index(name=f"total_fantasy_points_{fmt}")
-            season = season.merge(agg, on=group_cols, how="left")
-            season[f"points_per_game_{fmt}"] = season[f"total_fantasy_points_{fmt}"] / season["games_played"].where(season["games_played"] > 0)
-
-    main_col = f"total_fantasy_points_{scoring_format}"
-    season["total_fantasy_points"] = season[main_col]
-    season["points_per_game"] = season[main_col] / season["games_played"].where(season["games_played"] > 0)
-
-    if "position" in season.columns:
-        season = season[season["position"].isin(TARGET_POSITIONS)].copy()
-
-    season["primary_team"] = df.groupby(group_cols, dropna=False).apply(_primary_team).reset_index(name="primary_team")["primary_team"]
-    for fmt in ["standard", "half_ppr", "ppr"]:
-        tcol = f"total_fantasy_points_{fmt}"
-        if tcol in season.columns:
-            season[f"positional_finish_{fmt}"] = calculate_positional_finishes(season, tcol)
-            season, warns = add_replacement_adjusted_points(season, tcol, fmt)
-    if "total_fantasy_points_ppr" in season.columns:
-        season["overall_finish_ppr"] = season.groupby("season")["total_fantasy_points_ppr"].rank(method="min", ascending=False).astype("Int64")
-    return season, dup_meta
+    return targets.sort_values(
+        ["season", "position", "positional_finish", "player_id"]
+    ).reset_index(drop=True)

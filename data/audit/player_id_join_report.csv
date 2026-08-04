@@ -1,0 +1,8 @@
+dataset,left_rows,eligible_rows,matched_rows,match_rate,unmatched_rows,right_rows,right_duplicate_key_rows,notes
+player_stats_weekly,56518,56518,56518,1.0,0,56518,0,base table
+players,56518,56518,56518,1.0,0,25035,0,
+rosters,56518,56518,56518,1.0,0,31005,2,
+schedules,56518,56518,56518,1.0,0,2761,0,
+injuries,56518,56518,9653,0.17079514490958633,46865,55556,8,
+ff_opportunity_weekly,56518,56518,51041,0.903092819986553,5477,58304,0,
+snap_counts,56518,56518,56384,0.9976290739233519,134,253106,0,

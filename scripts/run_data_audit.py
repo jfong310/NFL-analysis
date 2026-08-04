@@ -17,6 +17,7 @@ def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(description="Run nflverse/nflreadpy data audit.")
     parser.add_argument("--start-season", type=int, default=DEFAULT_START_SEASON)
     parser.add_argument("--end-season", type=int, default=DEFAULT_END_SEASON)
+    parser.add_argument("--refresh", action="store_true", help="Ignore local raw-data caches.")
     return parser.parse_args()
 
 
@@ -26,7 +27,7 @@ def main() -> None:
         raise ValueError("start-season must be <= end-season")
 
     seasons = list(range(args.start_season, args.end_season + 1))
-    inventory_path, markdown_path, _ = run_data_audit(seasons)
+    inventory_path, markdown_path, _ = run_data_audit(seasons, refresh=args.refresh)
 
     print(f"source_inventory.csv saved to: {inventory_path}")
     print(f"data_audit.md saved to: {markdown_path}")

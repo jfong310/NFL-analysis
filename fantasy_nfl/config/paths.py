@@ -7,6 +7,7 @@ DATA_DIR = REPO_ROOT / "data"
 RAW_DATA_DIR = DATA_DIR / "raw"
 PROCESSED_DATA_DIR = DATA_DIR / "processed"
 SNAPSHOT_DIR = DATA_DIR / "snapshots"
+MODEL_DIR = REPO_ROOT / "models"
 AUDIT_DIR = DATA_DIR / "audit"
 AUDIT_SAMPLES_DIR = AUDIT_DIR / "samples"
 NOTEBOOKS_DIR = REPO_ROOT / "notebooks"
@@ -19,6 +20,7 @@ def ensure_data_dirs() -> None:
         RAW_DATA_DIR,
         PROCESSED_DATA_DIR,
         SNAPSHOT_DIR,
+        MODEL_DIR,
         AUDIT_DIR,
         AUDIT_SAMPLES_DIR,
         NOTEBOOKS_DIR,

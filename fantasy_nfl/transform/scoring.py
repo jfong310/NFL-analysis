@@ -1,50 +1,90 @@
-from __future__ import annotations
+"""Vectorized fantasy scoring and canonical scored player-week construction."""
 
-from dataclasses import dataclass
+from __future__ import annotations
 
 import pandas as pd
 
-from fantasy_nfl.config.scoring import DEFAULT_SCORING_FORMAT, SCORING_FORMATS, get_scoring_config
+from fantasy_nfl.config.scoring import SCORING_FORMATS, SCORING_WEIGHTS, get_scoring_weights
+from fantasy_nfl.transform.player_week import FANTASY_POSITIONS, normalize_id, normalize_team
 
-ALIASES = {"player_display_name": "player_name", "recent_team": "team"}
+IDENTITY_COLUMNS = [
+    "player_id",
+    "player_display_name",
+    "season",
+    "week",
+    "season_type",
+    "game_id",
+    "team",
+    "opponent_team",
+    "position",
+]
 
-
-@dataclass
-class ScoringMetadata:
-    scoring_columns_found: list[str]
-    scoring_columns_missing: list[str]
-    scoring_formats_generated: list[str]
-
-
-def normalize_player_week_columns(df: pd.DataFrame) -> pd.DataFrame:
-    out = df.copy()
-    for src, dst in ALIASES.items():
-        if src in out.columns and dst not in out.columns:
-            out[dst] = out[src]
-    return out
-
-
-def calculate_fantasy_points(df: pd.DataFrame, scoring_format: str = "ppr") -> tuple[pd.Series, dict[str, list[str]]]:
-    config = get_scoring_config(scoring_format)
-    total = pd.Series(0.0, index=df.index)
-    found, missing = [], []
-    for col, weight in config.items():
-        if col in df.columns:
-            total = total + pd.to_numeric(df[col], errors="coerce").fillna(0.0) * weight
-            found.append(col)
-        else:
-            missing.append(col)
-    return total, {"found": found, "missing": missing}
+SCORING_STAT_COLUMNS = sorted(
+    {column for weights in SCORING_WEIGHTS.values() for column in weights}
+)
 
 
-def score_player_weeks(df: pd.DataFrame, scoring_formats: list[str] | None = None) -> tuple[pd.DataFrame, ScoringMetadata]:
-    out = normalize_player_week_columns(df)
-    formats = scoring_formats or list(SCORING_FORMATS.keys())
-    all_found, all_missing = set(), set()
-    for fmt in formats:
-        points, meta = calculate_fantasy_points(out, fmt)
-        out[f"fantasy_points_{fmt}"] = points
-        all_found.update(meta["found"])
-        all_missing.update(meta["missing"])
-    out["fantasy_points"] = out[f"fantasy_points_{DEFAULT_SCORING_FORMAT}"]
-    return out, ScoringMetadata(sorted(all_found), sorted(all_missing), formats)
+def calculate_fantasy_points(frame: pd.DataFrame, scoring_format: str = "ppr") -> pd.Series:
+    """Calculate fantasy points from component statistics."""
+    weights = get_scoring_weights(scoring_format)
+    missing = sorted(set(weights) - set(frame.columns))
+    if missing:
+        raise ValueError(f"Missing scoring columns: {missing}")
+    points = pd.Series(0.0, index=frame.index, dtype="float64")
+    for column, weight in weights.items():
+        values = pd.to_numeric(frame[column], errors="coerce").fillna(0.0)
+        points = points.add(values * weight, fill_value=0.0)
+    return points
+
+
+def build_player_week_scored(stats: pd.DataFrame) -> pd.DataFrame:
+    """Create one independently scored row per regular-season fantasy player-week."""
+    missing_identity = sorted(set(IDENTITY_COLUMNS) - set(stats.columns))
+    if missing_identity:
+        raise ValueError(f"Weekly stats missing identity columns: {missing_identity}")
+    missing_stats = sorted(set(SCORING_STAT_COLUMNS) - set(stats.columns))
+    if missing_stats:
+        raise ValueError(f"Weekly stats missing scoring columns: {missing_stats}")
+
+    work = stats.copy()
+    work = work[
+        work["season_type"].eq("REG") & work["position"].isin(FANTASY_POSITIONS)
+    ].copy()
+    work["player_id"] = normalize_id(work["player_id"])
+    work["team"] = normalize_team(work["team"])
+    work["opponent_team"] = normalize_team(work["opponent_team"])
+    work["season"] = pd.to_numeric(work["season"], errors="raise").astype("int64")
+    work["week"] = pd.to_numeric(work["week"], errors="raise").astype("int64")
+
+    key = ["player_id", "season", "week"]
+    if work[key].isna().any().any():
+        raise ValueError("Scored player-week keys may not be missing")
+    duplicate_rows = int(work.duplicated(key, keep=False).sum())
+    if duplicate_rows:
+        raise ValueError(f"Weekly stats contain {duplicate_rows} duplicate player-week rows")
+
+    selected = IDENTITY_COLUMNS + SCORING_STAT_COLUMNS
+    output = work[selected].copy()
+    output = output.rename(
+        columns={
+            "player_display_name": "player_name",
+            "opponent_team": "opponent",
+        }
+    )
+    if "fantasy_points" in work:
+        output["nflverse_fantasy_points_standard"] = pd.to_numeric(
+            work["fantasy_points"], errors="coerce"
+        )
+    if "fantasy_points_ppr" in work:
+        output["nflverse_fantasy_points_ppr"] = pd.to_numeric(
+            work["fantasy_points_ppr"], errors="coerce"
+        )
+
+    for scoring_format in SCORING_FORMATS:
+        output[f"fantasy_points_{scoring_format}"] = calculate_fantasy_points(
+            work, scoring_format
+        )
+
+    output["fantasy_points"] = output["fantasy_points_ppr"]
+    output["games_played_flag"] = 1
+    return output.sort_values(["season", "week", "player_id"]).reset_index(drop=True)
