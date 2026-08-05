@@ -4,3 +4,5 @@ pyarrow
 pytest
 jupyter
 polars
+scikit-learn
+requests

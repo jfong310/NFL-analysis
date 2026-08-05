@@ -1,0 +1,512 @@
+snapshot_date,fantasypros_id,player_name,normalized_name,position,team,market_rank,market_metric,player_id,match_method,join_status,has_projection
+2026-07-31,19788,Ja'Marr Chase,jamarrchase,WR,CIN,1.72,ecr,00-0036900,fantasypros_id,matched,True
+2026-07-31,23180,Puka Nacua,pukanacua,WR,LAR,3.08,ecr,00-0039075,fantasypros_id,matched,True
+2026-07-31,22968,Jahmyr Gibbs,jahmyrgibbs,RB,DET,3.31,ecr,00-0039139,fantasypros_id,matched,True
+2026-07-31,23133,Bijan Robinson,bijanrobinson,RB,ATL,3.42,ecr,00-0038542,fantasypros_id,matched,True
+2026-07-31,23070,Jaxon Smith-Njigba,jaxonsmithnjigba,WR,SEA,4.4,ecr,00-0038543,fantasypros_id,matched,True
+2026-07-31,19799,Amon-Ra St. Brown,amonrastbrown,WR,DET,6.06,ecr,00-0036963,fantasypros_id,matched,True
+2026-07-31,16393,Christian McCaffrey,christianmccaffrey,RB,SF,8.46,ecr,00-0033280,fantasypros_id,matched,True
+2026-07-31,19202,CeeDee Lamb,ceedeelamb,WR,DAL,8.47,ecr,00-0036358,fantasypros_id,matched,True
+2026-07-31,19236,Justin Jefferson,justinjefferson,WR,MIN,9.13,ecr,00-0036322,fantasypros_id,matched,True
+2026-07-31,23163,Drake London,drakelondon,WR,ATL,11.94,ecr,00-0037238,fantasypros_id,matched,True
+2026-07-31,19217,Jonathan Taylor,jonathantaylor,RB,IND,12.57,ecr,00-0036223,fantasypros_id,matched,True
+2026-07-31,18218,A.J. Brown,ajbrown,WR,NE,15.29,ecr,00-0035676,fantasypros_id,matched,True
+2026-07-31,20130,Nico Collins,nicocollins,WR,HOU,16.06,ecr,00-0036554,fantasypros_id,matched,True
+2026-07-31,25989,Ashton Jeanty,ashtonjeanty,RB,LV,16.61,ecr,00-0040122,fantasypros_id,matched,True
+2026-07-31,22936,Trey McBride,treymcbride,TE,ARI,18.43,ecr,00-0037744,fantasypros_id,matched,True
+2026-07-31,22963,George Pickens,georgepickens,WR,DAL,18.6,ecr,00-0037247,fantasypros_id,matched,True
+2026-07-31,22958,James Cook III,jamescook,RB,BUF,19.04,ecr,00-0037248,fantasypros_id,matched,True
+2026-07-31,25324,Chase Brown,chasebrown,RB,CIN,19.07,ecr,00-0038597,fantasypros_id,matched,True
+2026-07-31,23113,Rashee Rice,rasheerice,WR,KC,19.57,ecr,00-0039067,fantasypros_id,matched,True
+2026-07-31,22955,Brock Bowers,brockbowers,TE,LV,20.78,ecr,00-0039338,fantasypros_id,matched,True
+2026-07-31,20111,Chris Olave,chrisolave,WR,NO,21.13,ecr,00-0037239,fantasypros_id,matched,True
+2026-07-31,23136,De'Von Achane,devonachane,RB,MIA,21.15,ecr,00-0039040,fantasypros_id,matched,True
+2026-07-31,25395,Omarion Hampton,omarionhampton,RB,LAC,24.28,ecr,00-0040666,fantasypros_id,matched,True
+2026-07-31,19222,DeVonta Smith,devontasmith,WR,PHI,24.79,ecr,00-0036912,fantasypros_id,matched,True
+2026-07-31,17240,Saquon Barkley,saquonbarkley,RB,PHI,25.46,ecr,00-0034844,fantasypros_id,matched,True
+2026-07-31,17298,Josh Allen,joshallen,QB,BUF,25.71,ecr,00-0034857,fantasypros_id,matched,True
+2026-07-31,22916,Zay Flowers,zayflowers,WR,BAL,29.42,ecr,00-0039064,fantasypros_id,matched,True
+2026-07-31,23072,Garrett Wilson,garrettwilson,WR,NYJ,30.32,ecr,00-0037740,fantasypros_id,matched,True
+2026-07-31,23021,Kenneth Walker III,kennethwalker,RB,KC,30.63,ecr,00-0038134,fantasypros_id,matched,True
+2026-07-31,17233,Lamar Jackson,lamarjackson,QB,BAL,32.31,ecr,00-0034796,fantasypros_id,matched,True
+2026-07-31,25417,Tetairoa McMillan,tetairoamcmillan,WR,CAR,32.54,ecr,00-0040124,fantasypros_id,matched,True
+2026-07-31,19211,Tee Higgins,teehiggins,WR,CIN,33.97,ecr,00-0036410,fantasypros_id,matched,True
+2026-07-31,26122,Ladd McConkey,laddmcconkey,WR,LAC,36.61,ecr,00-0039915,fantasypros_id,matched,True
+2026-07-31,25409,Malik Nabers,maliknabers,WR,NYG,37.28,ecr,00-0039337,fantasypros_id,matched,True
+2026-07-31,23062,Emeka Egbuka,emekaegbuka,WR,TB,37.5,ecr,00-0040129,fantasypros_id,matched,True
+2026-07-31,26006,Colston Loveland,colstonloveland,TE,CHI,37.64,ecr,00-0040126,fantasypros_id,matched,True
+2026-07-31,25403,Jeremiyah Love,jeremiyahlove,RB,ARI,37.97,ecr,00-0041027,normalized_name_position,matched,False
+2026-07-31,23046,Drake Maye,drakemaye,QB,NE,38.29,ecr,00-0039851,fantasypros_id,matched,True
+2026-07-31,19790,Jaylen Waddle,jaylenwaddle,WR,DEN,38.49,ecr,00-0036613,fantasypros_id,matched,True
+2026-07-31,15514,Derrick Henry,derrickhenry,RB,BAL,38.63,ecr,00-0032764,fantasypros_id,matched,True
+2026-07-31,22982,Breece Hall,breecehall,RB,NYJ,40.71,ecr,00-0038120,fantasypros_id,matched,True
+2026-07-31,23059,Kyren Williams,kyrenwilliams,RB,LAR,42.19,ecr,00-0037840,fantasypros_id,matched,True
+2026-07-31,18466,Terry McLaurin,terrymclaurin,WR,WAS,42.74,ecr,00-0035659,fantasypros_id,matched,True
+2026-07-31,19196,Joe Burrow,joeburrow,QB,CIN,43.47,ecr,00-0036442,fantasypros_id,matched,True
+2026-07-31,18269,Josh Jacobs,joshjacobs,RB,GB,44.21,ecr,00-0035700,fantasypros_id,matched,True
+2026-07-31,22739,Javonte Williams,javontewilliams,RB,DAL,46.04,ecr,00-0036997,fantasypros_id,matched,True
+2026-07-31,27016,Luther Burden III,lutherburden,WR,CHI,46.97,ecr,00-0040735,fantasypros_id,matched,True
+2026-07-31,12123,Davante Adams,davanteadams,WR,LAR,48.22,ecr,00-0031381,fantasypros_id,matched,True
+2026-07-31,12119,Mike Evans,mikeevans,WR,SF,49.33,ecr,00-0031408,fantasypros_id,matched,True
+2026-07-31,19231,Travis Etienne Jr.,travisetienne,RB,NO,49.89,ecr,00-0036973,fantasypros_id,matched,True
+2026-07-31,22902,Jayden Daniels,jaydendaniels,QB,WAS,51.83,ecr,00-0039910,fantasypros_id,matched,True
+2026-07-31,27166,Cam Skattebo,camskattebo,RB,NYG,53.65,ecr,00-0040715,fantasypros_id,matched,True
+2026-07-31,26434,Tyler Warren,tylerwarren,TE,IND,54.47,ecr,00-0040128,fantasypros_id,matched,True
+2026-07-31,23677,Jameson Williams,jamesonwilliams,WR,DET,54.67,ecr,00-0037240,fantasypros_id,matched,True
+2026-07-31,17265,DJ Moore,djmoore,WR,BUF,55.17,ecr,00-0034827,fantasypros_id,matched,True
+2026-07-31,23886,Christian Watson,christianwatson,WR,GB,56.76,ecr,00-0038124,fantasypros_id,matched,True
+2026-07-31,19275,Jalen Hurts,jalenhurts,QB,PHI,58.44,ecr,00-0036389,fantasypros_id,matched,True
+2026-07-31,25411,Rome Odunze,romeodunze,WR,CHI,59.51,ecr,00-0039919,fantasypros_id,matched,True
+2026-07-31,25981,Bucky Irving,buckyirving,RB,TB,59.58,ecr,00-0039361,fantasypros_id,matched,True
+2026-07-31,25391,Quinshon Judkins,quinshonjudkins,RB,CLE,59.68,ecr,00-0040784,fantasypros_id,matched,True
+2026-07-31,19210,D'Andre Swift,dandreswift,RB,CHI,61.13,ecr,00-0036275,fantasypros_id,matched,True
+2026-07-31,18239,David Montgomery,davidmontgomery,RB,HOU,63.35,ecr,00-0035685,fantasypros_id,matched,True
+2026-07-31,23065,TreVeyon Henderson,treveyonhenderson,RB,NE,63.43,ecr,00-0040734,fantasypros_id,matched,True
+2026-07-31,26009,Carnell Tate,carnelltate,WR,TEN,64.26,ecr,00-0041438,normalized_name_position,matched,False
+2026-07-31,23084,Caleb Williams,calebwilliams,QB,CHI,68.89,ecr,00-0039918,fantasypros_id,matched,True
+2026-07-31,18635,Justin Herbert,justinherbert,QB,LAC,70.08,ecr,00-0036355,fantasypros_id,matched,True
+2026-07-31,23064,Marvin Harrison Jr.,marvinharrison,WR,ARI,71.36,ecr,00-0039849,fantasypros_id,matched,True
+2026-07-31,27297,Bhayshul Tuten,bhayshultuten,RB,JAC,72.39,ecr,00-0040719,fantasypros_id,matched,True
+2026-07-31,24209,Jaylen Warren,jaylenwarren,RB,PIT,75.07,ecr,00-0037228,fantasypros_id,matched,True
+2026-07-31,25298,Tucker Kraft,tuckerkraft,TE,GB,75.29,ecr,00-0038996,fantasypros_id,matched,True
+2026-07-31,27050,Harold Fannin Jr.,haroldfannin,TE,CLE,75.49,ecr,00-0040663,fantasypros_id,matched,True
+2026-07-31,19780,Trevor Lawrence,trevorlawrence,QB,JAC,77.69,ecr,00-0036971,fantasypros_id,matched,True
+2026-07-31,27329,Jadarian Price,jadarianprice,RB,SEA,77.91,ecr,00-0041512,normalized_name_position,matched,False
+2026-07-31,23791,Alec Pierce,alecpierce,WR,IND,78.93,ecr,00-0037664,fantasypros_id,matched,True
+2026-07-31,15600,Dak Prescott,dakprescott,QB,DAL,79.06,ecr,00-0033077,fantasypros_id,matched,True
+2026-07-31,18219,DK Metcalf,dkmetcalf,WR,PIT,79.18,ecr,00-0035640,fantasypros_id,matched,True
+2026-07-31,16406,Chris Godwin Jr.,chrisgodwin,WR,TB,80.13,ecr,00-0033921,fantasypros_id,matched,True
+2026-07-31,23000,Brian Thomas Jr.,brianthomas,WR,JAC,80.18,ecr,00-0039893,fantasypros_id,matched,True
+2026-07-31,17253,Courtland Sutton,courtlandsutton,WR,DEN,80.43,ecr,00-0034348,fantasypros_id,matched,True
+2026-07-31,20164,Kyle Pitts Sr.,kylepitts,TE,ATL,80.5,ecr,00-0036970,fantasypros_id,matched,True
+2026-07-31,23106,Parker Washington,parkerwashington,WR,JAC,80.96,ecr,00-0038606,fantasypros_id,matched,True
+2026-07-31,22726,Rhamondre Stevenson,rhamondrestevenson,RB,NE,82.43,ecr,00-0036875,fantasypros_id,matched,True
+2026-07-31,19278,Michael Pittman Jr.,michaelpittman,WR,PIT,82.81,ecr,00-0036252,fantasypros_id,matched,True
+2026-07-31,18705,Tony Pollard,tonypollard,RB,TEN,83.85,ecr,00-0035261,fantasypros_id,matched,True
+2026-07-31,22978,Sam LaPorta,samlaporta,TE,DET,84.89,ecr,00-0039065,fantasypros_id,matched,True
+2026-07-31,19792,Chuba Hubbard,chubahubbard,RB,CAR,86.06,ecr,00-0036555,fantasypros_id,matched,True
+2026-07-31,22985,Wan'Dale Robinson,wandalerobinson,WR,TEN,87.46,ecr,00-0038117,fantasypros_id,matched,True
+2026-07-31,25333,Michael Wilson,michaelwilson,WR,ARI,87.56,ecr,00-0038559,fantasypros_id,matched,True
+2026-07-31,26035,Jordyn Tyson,jordyntyson,WR,NO,87.61,ecr,00-0041029,normalized_name_position,matched,False
+2026-07-31,19647,Rico Dowdle,ricodowdle,RB,PIT,87.92,ecr,00-0036139,fantasypros_id,matched,True
+2026-07-31,27142,RJ Harvey,rjharvey,RB,DEN,92.75,ecr,00-0040730,fantasypros_id,matched,True
+2026-07-31,23160,Jaxson Dart,jaxsondart,QB,NYG,92.9,ecr,00-0040691,fantasypros_id,matched,True
+2026-07-31,19797,Brock Purdy,brockpurdy,QB,SF,93.65,ecr,00-0037834,fantasypros_id,matched,True
+2026-07-31,24706,Josh Downs,joshdowns,WR,IND,94.25,ecr,00-0038997,fantasypros_id,matched,True
+2026-07-31,18598,Jakobi Meyers,jakobimeyers,WR,JAC,96.49,ecr,00-0034960,fantasypros_id,matched,True
+2026-07-31,23123,Quentin Johnston,quentinjohnston,WR,LAC,99.83,ecr,00-0038544,fantasypros_id,matched,True
+2026-07-31,23310,Kenny Gainwell,kennygainwell,RB,TB,99.88,ecr,00-0036919,fantasypros_id,matched,True
+2026-07-31,11594,Travis Kelce,traviskelce,TE,KC,100.32,ecr,00-0030506,fantasypros_id,matched,True
+2026-07-31,16413,Patrick Mahomes II,patrickmahomes,QB,KC,100.39,ecr,00-0033873,fantasypros_id,matched,True
+2026-07-31,25420,Makai Lemon,makailemon,WR,PHI,100.94,ecr,00-0040867,normalized_name_position,matched,False
+2026-07-31,27131,Kyle Monangai,kylemonangai,RB,CHI,101.65,ecr,00-0040236,fantasypros_id,matched,True
+2026-07-31,22910,Bo Nix,bonix,QB,DEN,101.9,ecr,00-0039732,fantasypros_id,matched,True
+2026-07-31,19245,J.K. Dobbins,jkdobbins,RB,DEN,102.78,ecr,00-0036158,fantasypros_id,matched,True
+2026-07-31,9451,Matthew Stafford,matthewstafford,QB,LAR,103.75,ecr,00-0026498,fantasypros_id,matched,True
+2026-07-31,23107,Jordan Addison,jordanaddison,WR,MIN,106.22,ecr,00-0038994,fantasypros_id,matched,True
+2026-07-31,16499,George Kittle,georgekittle,TE,SF,107.11,ecr,00-0033288,fantasypros_id,matched,True
+2026-07-31,23891,Rachaad White,rachaadwhite,RB,WAS,107.86,ecr,00-0037256,fantasypros_id,matched,True
+2026-07-31,22718,Jake Ferguson,jakeferguson,TE,DAL,108.01,ecr,00-0038041,fantasypros_id,matched,True
+2026-07-31,15501,Jared Goff,jaredgoff,QB,DET,108.19,ecr,00-0033106,fantasypros_id,matched,True
+2026-07-31,23013,Blake Corum,blakecorum,RB,LAR,108.58,ecr,00-0039738,fantasypros_id,matched,True
+2026-07-31,16673,Aaron Jones Sr.,aaronjones,RB,MIN,111.63,ecr,00-0033293,fantasypros_id,matched,True
+2026-07-31,23020,Jayden Reed,jaydenreed,WR,GB,111.99,ecr,00-0039146,fantasypros_id,matched,True
+2026-07-31,18600,Kyler Murray,kylermurray,QB,MIN,112.17,ecr,00-0035228,fantasypros_id,matched,True
+2026-07-31,26214,Ricky Pearsall,rickypearsall,WR,SF,112.64,ecr,00-0039916,fantasypros_id,matched,True
+2026-07-31,25247,Dalton Kincaid,daltonkincaid,TE,BUF,112.78,ecr,00-0038933,fantasypros_id,matched,True
+2026-07-31,17237,Baker Mayfield,bakermayfield,QB,TB,118.71,ecr,00-0034855,fantasypros_id,matched,True
+2026-07-31,19246,Jordan Love,jordanlove,QB,GB,119.63,ecr,00-0036264,fantasypros_id,matched,True
+2026-07-31,17270,Dallas Goedert,dallasgoedert,TE,PHI,120.18,ecr,00-0034351,fantasypros_id,matched,True
+2026-07-31,23096,Tyler Shough,tylershough,QB,NO,120.63,ecr,00-0040743,fantasypros_id,matched,True
+2026-07-31,23748,Khalil Shakir,khalilshakir,WR,BUF,120.9,ecr,00-0037261,fantasypros_id,matched,True
+2026-07-31,27077,Jayden Higgins,jaydenhiggins,WR,HOU,120.97,ecr,00-0040130,fantasypros_id,matched,True
+2026-07-31,23781,Isaiah Likely,isaiahlikely,TE,NYG,121.14,ecr,00-0037838,fantasypros_id,matched,True
+2026-07-31,26148,Jonathon Brooks,jonathonbrooks,RB,CAR,121.33,ecr,00-0039344,fantasypros_id,matched,False
+2026-07-31,23019,Xavier Worthy,xavierworthy,WR,KC,124.24,ecr,00-0039894,fantasypros_id,matched,True
+2026-07-31,27316,Jacory Croskey-Merritt,jacorycroskeymerritt,RB,WAS,125.42,ecr,00-0040242,fantasypros_id,matched,True
+2026-07-31,22969,Jordan Mason,jordanmason,RB,MIN,126.6,ecr,00-0037525,fantasypros_id,matched,True
+2026-07-31,17269,Mark Andrews,markandrews,TE,BAL,128.21,ecr,00-0034753,fantasypros_id,matched,True
+2026-07-31,26403,Jalen Coker,jalencoker,WR,CAR,129.85,ecr,00-0039491,fantasypros_id,matched,True
+2026-07-31,23794,Romeo Doubs,romeodoubs,WR,NE,130.83,ecr,00-0037816,fantasypros_id,matched,True
+2026-07-31,23499,Malik Willis,malikwillis,QB,MIA,133.19,ecr,00-0038128,fantasypros_id,matched,True
+2026-07-31,22980,Tyrone Tracy Jr.,tyronetracy,RB,NYG,134.22,ecr,00-0039384,fantasypros_id,matched,True
+2026-07-31,27331,KC Concepcion,kcconcepcion,WR,CLE,136.15,ecr,00-0041547,normalized_name_position,matched,False
+2026-07-31,27520,Woody Marks,woodymarks,RB,HOU,138.93,ecr,00-0040583,fantasypros_id,matched,True
+2026-07-31,26024,Matthew Golden,matthewgolden,WR,GB,139.33,ecr,00-0040667,fantasypros_id,matched,True
+2026-07-31,23071,C.J. Stroud,cjstroud,QB,HOU,140.76,ecr,00-0039163,fantasypros_id,matched,True
+2026-07-31,17236,Sam Darnold,samdarnold,QB,SEA,140.82,ecr,00-0034869,fantasypros_id,matched,True
+2026-07-31,24172,Tyler Allgeier,tylerallgeier,RB,ARI,143.28,ecr,00-0037263,fantasypros_id,matched,True
+2026-07-31,25323,Tyjae Spears,tyjaespears,RB,TEN,144.35,ecr,00-0039032,fantasypros_id,matched,True
+2026-07-31,22986,Chris Rodriguez Jr.,chrisrodriguez,RB,JAC,145.44,ecr,00-0038611,fantasypros_id,matched,True
+2026-07-31,16421,Alvin Kamara,alvinkamara,RB,NO,145.69,ecr,00-0033906,fantasypros_id,matched,True
+2026-07-31,27102,Dylan Sampson,dylansampson,RB,CLE,146.25,ecr,00-0040162,fantasypros_id,matched,True
+2026-07-31,19562,Juwan Johnson,juwanjohnson,TE,NO,146.9,ecr,00-0036040,fantasypros_id,matched,True
+2026-07-31,23152,Zach Charbonnet,zachcharbonnet,RB,SEA,148.42,ecr,00-0039165,fantasypros_id,matched,True
+2026-07-31,24687,Rashid Shaheed,rashidshaheed,WR,SEA,149.86,ecr,00-0037545,fantasypros_id,matched,True
+2026-07-31,24333,Isiah Pacheco,isiahpacheco,RB,DET,151.08,ecr,00-0037197,fantasypros_id,matched,True
+2026-07-31,24755,Cam Ward,camward,QB,TEN,151.54,ecr,00-0040676,fantasypros_id,matched,True
+2026-07-31,25345,Brenton Strange,brentonstrange,TE,JAC,152.11,ecr,00-0038935,fantasypros_id,matched,True
+2026-07-31,8120,Houston Texans,houstontexans,DST,HOU,153.6,ecr,,unmatched,unmatched,False
+2026-07-31,19590,Jauan Jennings,jauanjennings,WR,MIN,154.14,ecr,00-0036259,fantasypros_id,matched,True
+2026-07-31,19201,Jerry Jeudy,jerryjeudy,WR,CLE,156.89,ecr,00-0036407,fantasypros_id,matched,True
+2026-07-31,27339,Denzel Boston,denzelboston,WR,CLE,158.73,ecr,00-0041037,normalized_name_position,matched,False
+2026-07-31,18232,Daniel Jones,danieljones,QB,IND,159.0,ecr,00-0035710,fantasypros_id,matched,True
+2026-07-31,25360,Keaton Mitchell,keatonmitchell,RB,LAC,159.16,ecr,00-0038454,fantasypros_id,matched,True
+2026-07-31,23982,Chig Okonkwo,chigokonkwo,TE,WAS,159.32,ecr,00-0037809,fantasypros_id,matched,True
+2026-07-31,27320,Jonah Coleman,jonahcoleman,RB,DEN,162.0,ecr,00-0041496,normalized_name_position,matched,False
+2026-07-31,8090,Denver Broncos,denverbroncos,DST,DEN,162.38,ecr,,unmatched,unmatched,False
+2026-07-31,28127,Omar Cooper Jr.,omarcooper,WR,NYJ,163.83,ecr,00-0041511,normalized_name_position,matched,False
+2026-07-31,15561,Hunter Henry,hunterhenry,TE,NE,163.88,ecr,00-0033090,fantasypros_id,matched,True
+2026-07-31,24357,Adonai Mitchell,adonaimitchell,WR,NYJ,165.0,ecr,00-0039890,fantasypros_id,matched,True
+2026-07-31,22900,Bryce Young,bryceyoung,QB,CAR,165.51,ecr,00-0039150,fantasypros_id,matched,True
+2026-07-31,8260,Seattle Seahawks,seattleseahawks,DST,SEA,166.82,ecr,,unmatched,unmatched,False
+2026-07-31,13981,Stefon Diggs,stefondiggs,WR,FA,167.95,ecr,00-0031588,fantasypros_id,matched,True
+2026-07-31,8280,Los Angeles Rams,losangelesrams,DST,LAR,168.94,ecr,,unmatched,unmatched,False
+2026-07-31,25997,Oronde Gadsden II,orondegadsden,TE,LAC,169.1,ecr,00-0040189,fantasypros_id,matched,True
+2026-07-31,20094,Brian Robinson Jr.,brianrobinson,RB,ATL,170.32,ecr,00-0037746,fantasypros_id,matched,True
+2026-07-31,23179,Jalen McMillan,jalenmcmillan,WR,TB,170.41,ecr,00-0039855,fantasypros_id,matched,True
+2026-07-31,22908,Tank Bigsby,tankbigsby,RB,PHI,173.36,ecr,00-0038555,fantasypros_id,matched,True
+2026-07-31,26034,Travis Hunter,travishunter,WR,JAC,173.56,ecr,00-0040718,fantasypros_id,matched,False
+2026-07-31,8230,Philadelphia Eagles,philadelphiaeagles,DST,PHI,174.04,ecr,,unmatched,unmatched,False
+2026-07-31,25337,Tre Tucker,tretucker,WR,LV,175.67,ecr,00-0038563,fantasypros_id,matched,True
+2026-07-31,24346,Braelon Allen,braelonallen,RB,NYJ,176.5,ecr,00-0039794,fantasypros_id,matched,True
+2026-07-31,17349,Dalton Schultz,daltonschultz,TE,HOU,179.11,ecr,00-0034383,fantasypros_id,matched,True
+2026-07-31,26215,Tre' Harris,treharris,WR,LAC,179.99,ecr,00-0040727,fantasypros_id,matched,True
+2026-07-31,16447,James Conner,jamesconner,RB,ARI,182.71,ecr,00-0033553,fantasypros_id,matched,True
+2026-07-31,8170,Minnesota Vikings,minnesotavikings,DST,MIN,185.04,ecr,,unmatched,unmatched,False
+2026-07-31,8180,New England Patriots,newenglandpatriots,DST,NE,186.22,ecr,,unmatched,unmatched,False
+2026-07-31,26398,Ryan Flournoy,ryanflournoy,WR,DAL,186.71,ecr,00-0039410,fantasypros_id,matched,True
+2026-07-31,26068,Brandon Aubrey,brandonaubrey,K,DAL,186.93,ecr,00-0037692,fantasypros_id,matched,False
+2026-07-31,18244,Deebo Samuel Sr.,deebosamuel,WR,SF,186.99,ecr,00-0035719,fantasypros_id,matched,True
+2026-07-31,8140,Jacksonville Jaguars,jacksonvillejaguars,DST,JAC,187.12,ecr,,unmatched,unmatched,False
+2026-07-31,8240,Pittsburgh Steelers,pittsburghsteelers,DST,PIT,187.59,ecr,,unmatched,unmatched,False
+2026-07-31,18290,T.J. Hockenson,tjhockenson,TE,MIN,188.17,ecr,00-0035229,fantasypros_id,matched,True
+2026-07-31,23092,Troy Franklin,troyfranklin,WR,DEN,191.38,ecr,00-0039868,fantasypros_id,matched,True
+2026-07-31,15756,Ka'imi Fairbairn,kaimifairbairn,K,HOU,192.03,ecr,00-0032726,fantasypros_id,matched,False
+2026-07-31,27122,Jaylin Noel,jaylinnoel,WR,HOU,192.59,ecr,00-0040138,fantasypros_id,matched,True
+2026-07-31,22989,Kayshon Boutte,kayshonboutte,WR,NE,193.14,ecr,00-0038608,fantasypros_id,matched,True
+2026-07-31,15642,Jacoby Brissett,jacobybrissett,QB,ARI,193.93,ecr,00-0033119,fantasypros_id,matched,True
+2026-07-31,8250,Los Angeles Chargers,losangeleschargers,DST,LAC,194.4,ecr,,unmatched,unmatched,False
+2026-07-31,28107,Emmett Johnson,emmettjohnson,RB,KC,194.56,ecr,00-0041013,normalized_name_position,matched,False
+2026-07-31,23901,Cameron Dicker,camerondicker,K,LAC,195.25,ecr,00-0037224,fantasypros_id,matched,False
+2026-07-31,26355,Kimani Vidal,kimanividal,RB,LAC,195.61,ecr,00-0039391,fantasypros_id,matched,True
+2026-07-31,25418,Antonio Williams,antoniowilliams,WR,WAS,197.73,ecr,00-0041040,normalized_name_position,matched,False
+2026-07-31,27446,Isaac TeSlaa,isaacteslaa,WR,DET,198.52,ecr,00-0040669,fantasypros_id,matched,True
+2026-07-31,26475,Cam Little,camlittle,K,JAC,198.66,ecr,00-0039409,fantasypros_id,matched,False
+2026-07-31,8110,Green Bay Packers,greenbaypackers,DST,GB,199.55,ecr,,unmatched,unmatched,False
+2026-07-31,14003,Jason Myers,jasonmyers,K,SEA,200.78,ecr,00-0031492,fantasypros_id,matched,False
+2026-07-31,17258,Calvin Ridley,calvinridley,WR,TEN,202.74,ecr,00-0034837,fantasypros_id,matched,True
+2026-07-31,26191,Ray Davis,raydavis,RB,BUF,203.54,ecr,00-0039875,fantasypros_id,matched,True
+2026-07-31,8020,Baltimore Ravens,baltimoreravens,DST,BAL,203.65,ecr,,unmatched,unmatched,False
+2026-07-31,24177,Jalen Nailor,jalennailor,WR,LV,204.13,ecr,00-0037291,fantasypros_id,matched,True
+2026-07-31,28108,Mike Washington Jr.,mikewashington,RB,LV,206.36,ecr,WAS569019,normalized_name_position,matched,False
+2026-07-31,23679,Sean Tucker,seantucker,RB,TB,206.9,ecr,00-0038951,fantasypros_id,matched,True
+2026-07-31,19810,Darnell Mooney,darnellmooney,WR,NYG,207.03,ecr,00-0036309,fantasypros_id,matched,True
+2026-07-31,27534,Tyler Loop,tylerloop,K,BAL,207.4,ecr,00-0040074,fantasypros_id,matched,False
+2026-07-31,17575,Eddy Pineiro,eddypineiro,K,SF,207.62,ecr,00-0034173,fantasypros_id,matched,False
+2026-07-31,25885,Emanuel Wilson,emanuelwilson,RB,SEA,208.59,ecr,00-0038797,fantasypros_id,matched,True
+2026-07-31,27211,Pat Bryant,patbryant,WR,DEN,208.68,ecr,00-0040134,fantasypros_id,matched,True
+2026-07-31,26335,AJ Barner,ajbarner,TE,SEA,209.63,ecr,00-0039793,fantasypros_id,matched,True
+2026-07-31,23153,Greg Dulcich,gregdulcich,TE,MIA,211.12,ecr,00-0037252,fantasypros_id,matched,True
+2026-07-31,8150,Kansas City Chiefs,kansascitychiefs,DST,KC,213.06,ecr,,unmatched,unmatched,False
+2026-07-31,24354,Dontayvion Wicks,dontayvionwicks,WR,PHI,213.2,ecr,00-0038393,fantasypros_id,matched,True
+2026-07-31,26314,Malik Washington,malikwashington,WR,MIA,213.41,ecr,00-0039880,fantasypros_id,matched,True
+2026-07-31,19252,Brandon Aiyuk,brandonaiyuk,WR,SF,213.58,ecr,00-0036261,fantasypros_id,matched,False
+2026-07-31,23297,Evan McPherson,evanmcpherson,K,CIN,213.98,ecr,00-0036854,fantasypros_id,matched,False
+2026-07-31,8070,Cleveland Browns,clevelandbrowns,DST,CLE,214.45,ecr,,unmatched,unmatched,False
+2026-07-31,13731,Cairo Santos,cairosantos,K,CHI,214.67,ecr,00-0031203,fantasypros_id,matched,False
+2026-07-31,26055,Kenyon Sadiq,kenyonsadiq,TE,NYJ,214.9,ecr,00-0041032,normalized_name_position,matched,False
+2026-07-31,8100,Detroit Lions,detroitlions,DST,DET,216.24,ecr,,unmatched,unmatched,False
+2026-07-31,28138,De'Zhaun Stribling,dezhaunstribling,WR,SF,216.72,ecr,00-0041035,fantasypros_id,matched,False
+2026-07-31,24343,Nicholas Singleton,nicholassingleton,RB,TEN,217.81,ecr,00-0040886,normalized_name_position,matched,False
+2026-07-31,27291,Andy Borregales,andyborregales,K,NE,218.54,ecr,00-0040200,fantasypros_id,matched,False
+2026-07-31,27109,Gunnar Helm,gunnarhelm,TE,TEN,219.49,ecr,00-0040584,fantasypros_id,matched,True
+2026-07-31,27315,Chimere Dike,chimeredike,WR,TEN,221.42,ecr,00-0040705,fantasypros_id,matched,True
+2026-07-31,8030,Buffalo Bills,buffalobills,DST,BUF,223.49,ecr,,unmatched,unmatched,False
+2026-07-31,24362,Kaytron Allen,kaytronallen,RB,WAS,223.85,ecr,00-0041096,normalized_name_position,matched,False
+2026-07-31,26075,Jake Bates,jakebates,K,DET,224.0,ecr,00-0039172,fantasypros_id,matched,False
+2026-07-31,19058,Chase McLaughlin,chasemclaughlin,K,TB,225.06,ecr,00-0035358,fantasypros_id,matched,False
+2026-07-31,9001,Aaron Rodgers,aaronrodgers,QB,PIT,225.49,ecr,00-0023459,fantasypros_id,matched,True
+2026-07-31,16433,Cooper Kupp,cooperkupp,WR,SEA,227.84,ecr,00-0033908,fantasypros_id,matched,True
+2026-07-31,25361,Tank Dell,tankdell,WR,HOU,228.06,ecr,00-0038977,fantasypros_id,matched,False
+2026-07-31,25987,Jaylen Wright,jaylenwright,RB,MIA,228.43,ecr,00-0039874,fantasypros_id,matched,True
+2026-07-31,11687,Geno Smith,genosmith,QB,NYJ,232.17,ecr,00-0030565,fantasypros_id,matched,True
+2026-07-31,25419,Zachariah Branch,zachariahbranch,WR,ATL,232.85,ecr,00-0041044,normalized_name_position,matched,False
+2026-07-31,19794,Rashod Bateman,rashodbateman,WR,BAL,232.97,ecr,00-0036550,fantasypros_id,matched,True
+2026-07-31,26638,Harrison Mevis,harrisonmevis,K,LAR,233.16,ecr,00-0039498,fantasypros_id,matched,False
+2026-07-31,26039,Germie Bernard,germiebernard,WR,PIT,234.03,ecr,00-0041489,normalized_name_position,matched,False
+2026-07-31,15802,Tyreek Hill,tyreekhill,WR,FA,234.74,ecr,00-0033040,fantasypros_id,matched,True
+2026-07-31,26038,Chris Bell,chrisbell,WR,MIA,238.88,ecr,00-0041525,normalized_name_position,matched,False
+2026-07-31,23118,MarShawn Lloyd,marshawnlloyd,RB,GB,240.09,ecr,00-0039811,fantasypros_id,matched,False
+2026-07-31,27059,Elic Ayomanor,elicayomanor,WR,TEN,241.37,ecr,00-0040170,fantasypros_id,matched,True
+2026-07-31,16712,Harrison Butker,harrisonbutker,K,KC,241.5,ecr,00-0033303,fantasypros_id,matched,False
+2026-07-31,18256,Justice Hill,justicehill,RB,BAL,242.09,ecr,00-0034975,fantasypros_id,matched,True
+2026-07-31,27224,Jack Bech,jackbech,WR,LV,243.63,ecr,00-0040729,fantasypros_id,matched,True
+2026-07-31,20163,Pat Freiermuth,patfreiermuth,TE,PIT,243.67,ecr,00-0036894,fantasypros_id,matched,True
+2026-07-31,23091,Terrance Ferguson,terranceferguson,TE,LAR,244.01,ecr,00-0040737,fantasypros_id,matched,True
+2026-07-31,13029,Chris Boswell,chrisboswell,K,PIT,244.91,ecr,00-0031136,fantasypros_id,matched,False
+2026-07-31,24344,Jaydon Blue,jaydonblue,RB,DAL,245.05,ecr,00-0040586,fantasypros_id,matched,True
+2026-07-31,26019,Keon Coleman,keoncoleman,WR,BUF,245.22,ecr,00-0039901,fantasypros_id,matched,True
+2026-07-31,25984,Ollie Gordon II,olliegordon,RB,MIA,245.75,ecr,00-0040198,fantasypros_id,matched,True
+2026-07-31,16399,David Njoku,davidnjoku,TE,LAC,245.85,ecr,00-0033885,fantasypros_id,matched,True
+2026-07-31,23181,Cade Otton,cadeotton,TE,TB,245.92,ecr,00-0038129,fantasypros_id,matched,True
+2026-07-31,25388,Trey Benson,treybenson,RB,ARI,246.95,ecr,00-0039921,fantasypros_id,matched,True
+2026-07-31,15569,Sterling Shepard,sterlingshepard,WR,FA,247.0,ecr,00-0032385,fantasypros_id,matched,True
+2026-07-31,25977,Isaiah Davis,isaiahdavis,RB,NYJ,251.02,ecr,00-0039798,fantasypros_id,matched,True
+2026-07-31,27463,Elijah Sarratt,elijahsarratt,WR,BAL,252.79,ecr,00-0040876,normalized_name_position,matched,False
+2026-07-31,16411,Evan Engram,evanengram,TE,DEN,254.31,ecr,00-0033881,fantasypros_id,matched,True
+2026-07-31,27994,Malachi Fields,malachifields,WR,NYG,254.48,ecr,00-0041042,normalized_name_position,matched,False
+2026-07-31,28084,Demond Claiborne,demondclaiborne,RB,MIN,254.77,ecr,00-0041104,normalized_name_position,matched,False
+2026-07-31,8300,Tennessee Titans,tennesseetitans,DST,TEN,255.0,ecr,,unmatched,unmatched,False
+2026-07-31,8270,San Francisco 49ers,sanfrancisco49ers,DST,SF,255.03,ecr,,unmatched,unmatched,False
+2026-07-31,17268,Christian Kirk,christiankirk,WR,SF,255.87,ecr,00-0034775,fantasypros_id,matched,True
+2026-07-31,28013,Fernando Mendoza,fernandomendoza,QB,LV,256.28,ecr,MEN516487,normalized_name_position,matched,False
+2026-07-31,28130,Ted Hurst III,tedhurst,WR,TB,256.4,ecr,00-0041048,normalized_name_position,matched,False
+2026-07-31,19372,Colby Parkinson,colbyparkinson,TE,LAR,256.74,ecr,00-0036244,fantasypros_id,matched,True
+2026-07-31,23080,Marvin Mims Jr.,marvinmims,WR,DEN,258.19,ecr,00-0038976,fantasypros_id,matched,True
+2026-07-31,26022,Tory Horton,toryhorton,WR,SEA,258.59,ecr,00-0040648,fantasypros_id,matched,True
+2026-07-31,18406,Ty Johnson,tyjohnson,RB,BUF,258.73,ecr,00-0035537,fantasypros_id,matched,True
+2026-07-31,26341,Will Reichard,willreichard,K,MIN,259.84,ecr,00-0039404,fantasypros_id,matched,False
+2026-07-31,22915,George Holani,georgeholani,RB,SEA,260.39,ecr,00-0039299,fantasypros_id,matched,True
+2026-07-31,25823,Chris Brooks,chrisbrooks,RB,GB,261.05,ecr,00-0038685,fantasypros_id,matched,True
+2026-07-31,26136,Xavier Legette,xavierlegette,WR,CAR,262.32,ecr,00-0039342,fantasypros_id,matched,True
+2026-07-31,8010,Atlanta Falcons,atlantafalcons,DST,ATL,262.97,ecr,,unmatched,unmatched,False
+2026-07-31,23682,Devin Neal,devinneal,RB,NO,264.22,ecr,00-0040202,fantasypros_id,matched,True
+2026-07-31,18706,Darius Slayton,dariusslayton,WR,NYG,264.81,ecr,00-0035535,fantasypros_id,matched,True
+2026-07-31,27487,Kyle Williams,kylewilliams,WR,NE,264.96,ecr,00-0040131,fantasypros_id,matched,True
+2026-07-31,27165,Kaleb Johnson,kalebjohnson,RB,PIT,265.45,ecr,00-0040142,fantasypros_id,matched,True
+2026-07-31,26005,Mason Taylor,masontaylor,TE,NYJ,266.17,ecr,00-0040736,fantasypros_id,matched,True
+2026-07-31,26763,Spencer Shrader,spencershrader,K,IND,267.25,ecr,00-0039576,fantasypros_id,matched,False
+2026-07-31,19198,Tua Tagovailoa,tuatagovailoa,QB,ATL,267.4,ecr,00-0036212,fantasypros_id,matched,True
+2026-07-31,9491,Nick Folk,nickfolk,K,ATL,268.14,ecr,00-0025565,fantasypros_id,matched,False
+2026-07-31,11616,Keenan Allen,keenanallen,WR,LAC,268.33,ecr,00-0030279,fantasypros_id,matched,True
+2026-07-31,27097,DJ Giddens,djgiddens,RB,IND,268.37,ecr,00-0040179,fantasypros_id,matched,True
+2026-07-31,22913,Tyquan Thornton,tyquanthornton,WR,KC,268.65,ecr,00-0038104,fantasypros_id,matched,True
+2026-07-31,28047,Chris Brazzell II,chrisbrazzell,WR,CAR,269.2,ecr,00-0041047,normalized_name_position,matched,False
+2026-07-31,23144,Eli Stowers,elistowers,TE,PHI,269.26,ecr,00-0041483,normalized_name_position,matched,False
+2026-07-31,16489,Mack Hollins,mackhollins,WR,NE,269.31,ecr,00-0033555,fantasypros_id,matched,True
+2026-07-31,23104,Theo Johnson,theojohnson,TE,NYG,269.37,ecr,00-0039847,fantasypros_id,matched,True
+2026-07-31,27310,Jordan James,jordanjames,RB,SF,269.75,ecr,00-0040177,fantasypros_id,matched,False
+2026-07-31,16026,Wil Lutz,willutz,K,DEN,269.95,ecr,00-0032569,fantasypros_id,matched,False
+2026-07-31,27285,LeQuint Allen Jr.,lequintallen,RB,JAC,270.06,ecr,00-0040238,fantasypros_id,matched,True
+2026-07-31,26409,Devaughn Vele,devaughnvele,WR,NO,270.51,ecr,00-0039424,fantasypros_id,matched,True
+2026-07-31,8050,Chicago Bears,chicagobears,DST,CHI,270.88,ecr,,unmatched,unmatched,False
+2026-07-31,24009,Jake Moody,jakemoody,K,WAS,271.25,ecr,00-0038562,fantasypros_id,matched,False
+2026-07-31,17272,Mike Gesicki,mikegesicki,TE,CIN,271.77,ecr,00-0034829,fantasypros_id,matched,True
+2026-07-31,25533,Blake Grupe,blakegrupe,K,IND,272.0,ecr,00-0038905,fantasypros_id,matched,False
+2026-07-31,25335,Andrei Iosivas,andreiiosivas,WR,CIN,272.73,ecr,00-0038619,fantasypros_id,matched,True
+2026-07-31,8080,Dallas Cowboys,dallascowboys,DST,DAL,274.19,ecr,,unmatched,unmatched,False
+2026-07-31,16423,Samaje Perine,samajeperine,RB,CIN,274.58,ecr,00-0033526,fantasypros_id,matched,True
+2026-07-31,8200,New York Giants,newyorkgiants,DST,NYG,274.64,ecr,,unmatched,unmatched,False
+2026-07-31,24360,Kendre Miller,kendremiller,RB,NO,274.92,ecr,00-0038551,fantasypros_id,matched,True
+2026-07-31,8190,New Orleans Saints,neworleanssaints,DST,NO,276.27,ecr,,unmatched,unmatched,False
+2026-07-31,8060,Cincinnati Bengals,cincinnatibengals,DST,CIN,277.57,ecr,,unmatched,unmatched,False
+2026-07-31,24205,Malik Davis,malikdavis,RB,DAL,278.86,ecr,00-0037563,fantasypros_id,matched,True
+2026-07-31,27259,Brashard Smith,brashardsmith,RB,KC,279.15,ecr,00-0040078,fantasypros_id,matched,True
+2026-07-31,26444,Charlie Smyth,charliesmyth,K,NO,279.32,ecr,,unmatched,unmatched,False
+2026-07-31,28401,Kaelon Black,kaelonblack,RB,SF,279.36,ecr,00-0041052,normalized_name_position,matched,False
+2026-07-31,25339,Jake Bobo,jakebobo,WR,SEA,279.5,ecr,00-0038752,fantasypros_id,matched,True
+2026-07-31,19760,Tyler Bass,tylerbass,K,BUF,280.38,ecr,00-0036162,fantasypros_id,matched,False
+2026-07-31,8130,Indianapolis Colts,indianapoliscolts,DST,IND,281.31,ecr,,unmatched,unmatched,False
+2026-07-31,18621,Alexander Mattison,alexandermattison,RB,FA,282.0,ecr,00-0034972,fantasypros_id,matched,False
+2026-07-31,18226,Hollywood Brown,hollywoodbrown,WR,PHI,282.73,ecr,00-0035662,fantasypros_id,matched,True
+2026-07-31,22921,Jerome Ford,jeromeford,RB,WAS,283.15,ecr,00-0037267,fantasypros_id,matched,True
+2026-07-31,28507,Trey Smack,treysmack,K,GB,283.5,ecr,,unmatched,unmatched,False
+2026-07-31,22973,Michael Penix Jr.,michaelpenix,QB,ATL,284.23,ecr,00-0039917,fantasypros_id,matched,True
+2026-07-31,19302,Najee Harris,najeeharris,RB,LAC,284.48,ecr,00-0036893,fantasypros_id,matched,True
+2026-07-31,23079,Seth McGowan,sethmcgowan,RB,IND,284.71,ecr,00-0041125,normalized_name_position,matched,False
+2026-07-31,8290,Tampa Bay Buccaneers,tampabaybuccaneers,DST,TB,286.0,ecr,,unmatched,unmatched,False
+2026-07-31,28126,Skyler Bell,skylerbell,WR,BUF,287.19,ecr,00-0041443,normalized_name_position,matched,False
+2026-07-31,11798,Kyle Juszczyk,kylejuszczyk,RB,SF,288.75,ecr,00-0029892,fantasypros_id,matched,False
+2026-07-31,24778,Jake Tonges,jaketonges,TE,SF,288.98,ecr,00-0037112,fantasypros_id,matched,True
+2026-07-31,16398,Deshaun Watson,deshaunwatson,QB,CLE,289.5,ecr,00-0033537,fantasypros_id,matched,False
+2026-07-31,16420,Joe Mixon,joemixon,RB,FA,289.66,ecr,00-0033897,fantasypros_id,matched,False
+2026-07-31,25876,Jaleel McLaughlin,jaleelmclaughlin,RB,DEN,289.7,ecr,00-0038794,fantasypros_id,matched,True
+2026-07-31,23101,Jahan Dotson,jahandotson,WR,ATL,289.95,ecr,00-0037741,fantasypros_id,matched,True
+2026-07-31,18280,Devin Singletary,devinsingletary,RB,NYG,290.95,ecr,00-0035250,fantasypros_id,matched,True
+2026-07-31,25654,Emari Demercado,emaridemercado,RB,KC,291.12,ecr,00-0038705,fantasypros_id,matched,True
+2026-07-31,25334,Derius Davis,deriusdavis,WR,LAC,291.5,ecr,00-0038573,fantasypros_id,matched,True
+2026-07-31,27337,Ja'Kobi Lane,jakobilane,WR,BAL,292.28,ecr,00-0040870,normalized_name_position,matched,False
+2026-07-31,11177,Kirk Cousins,kirkcousins,QB,LV,292.79,ecr,00-0029604,fantasypros_id,matched,True
+2026-07-31,27449,Konata Mumpfield,konatamumpfield,WR,LAR,293.0,ecr,00-0040590,fantasypros_id,matched,True
+2026-07-31,24371,Isaiah Bond,isaiahbond,WR,CLE,293.4,ecr,00-0040782,fantasypros_id,matched,True
+2026-07-31,22845,Joshua Palmer,joshuapalmer,WR,BUF,294.14,ecr,00-0036988,fantasypros_id,matched,True
+2026-07-31,16540,Jake Elliott,jakeelliott,K,PHI,294.42,ecr,00-0033787,fantasypros_id,matched,False
+2026-07-31,8040,Carolina Panthers,carolinapanthers,DST,CAR,294.63,ecr,,unmatched,unmatched,False
+2026-07-31,22967,Darnell Washington,darnellwashington,TE,PIT,294.67,ecr,00-0038558,fantasypros_id,matched,True
+2026-07-31,13274,Brandon McManus,brandonmcmanus,K,FA,295.6,ecr,00-0029822,fantasypros_id,matched,False
+2026-07-31,25430,Oscar Delp,oscardelp,TE,NO,295.83,ecr,00-0041041,normalized_name_position,matched,False
+2026-07-31,24367,Adam Randall,adamrandall,RB,BAL,295.98,ecr,00-0040888,normalized_name_position,matched,False
+2026-07-31,23770,Jalen Tolbert,jalentolbert,WR,MIA,296.84,ecr,00-0037666,fantasypros_id,matched,True
+2026-07-31,12127,Odell Beckham Jr.,odellbeckham,WR,NYG,297.33,ecr,00-0031235,fantasypros_id,matched,False
+2026-07-31,26392,Isaac Guerendo,isaacguerendo,RB,SF,297.73,ecr,00-0039363,fantasypros_id,matched,True
+2026-07-31,25968,Shedeur Sanders,shedeursanders,QB,CLE,298.05,ecr,00-0040668,fantasypros_id,matched,True
+2026-07-31,28135,Caleb Douglas,calebdouglas,WR,MIA,298.22,ecr,00-0041523,normalized_name_position,matched,False
+2026-07-31,24901,Bam Knight,bamknight,RB,ARI,299.16,ecr,00-0037157,fantasypros_id,matched,True
+2026-07-31,13971,Tyler Lockett,tylerlockett,WR,LV,300.5,ecr,00-0032211,fantasypros_id,matched,True
+2026-07-31,26309,Sione Vaki,sionevaki,RB,DET,300.6,ecr,00-0039364,fantasypros_id,matched,True
+2026-07-31,26212,Tahj Brooks,tahjbrooks,RB,CIN,300.96,ecr,00-0040208,fantasypros_id,matched,True
+2026-07-31,27261,Ryan Fitzgerald,ryanfitzgerald,K,CAR,301.17,ecr,00-0040279,fantasypros_id,matched,False
+2026-07-31,8310,Washington Commanders,washingtoncommanders,DST,WAS,301.86,ecr,,unmatched,unmatched,False
+2026-07-31,22976,Tyler Goodson,tylergoodson,RB,ATL,302.0,ecr,00-0037120,fantasypros_id,matched,True
+2026-07-31,17420,Daniel Carlson,danielcarlson,K,LV,302.75,ecr,00-0034161,fantasypros_id,matched,False
+2026-07-31,25287,Cedric Tillman,cedrictillman,WR,CLE,302.84,ecr,00-0038979,fantasypros_id,matched,True
+2026-07-31,23054,Audric Estime,audricestime,RB,NO,303.93,ecr,00-0039373,fantasypros_id,matched,True
+2026-07-31,24370,Mitch Tinsley,mitchtinsley,WR,CIN,304.33,ecr,00-0038839,fantasypros_id,matched,True
+2026-07-31,26328,Luke McCaffrey,lukemccaffrey,WR,WAS,305.52,ecr,00-0039355,fantasypros_id,matched,True
+2026-07-31,25393,Trevor Etienne,trevoretienne,RB,CAR,305.77,ecr,00-0040644,fantasypros_id,matched,True
+2026-07-31,24335,Jarquez Hunter,jarquezhunter,RB,LAR,305.8,ecr,00-0040692,fantasypros_id,matched,False
+2026-07-31,22763,Khalil Herbert,khalilherbert,RB,FA,306.0,ecr,00-0036906,fantasypros_id,matched,True
+2026-07-31,16425,Kareem Hunt,kareemhunt,RB,FA,306.3,ecr,00-0033923,fantasypros_id,matched,True
+2026-07-31,27076,Jalen Royals,jalenroyals,WR,KC,306.41,ecr,00-0040646,fantasypros_id,matched,True
+2026-07-31,25983,Rasheen Ali,rasheenali,RB,BAL,307.0,ecr,00-0039796,fantasypros_id,matched,True
+2026-07-31,25941,Hunter Luepke,hunterluepke,RB,DAL,307.25,ecr,00-0038738,fantasypros_id,matched,True
+2026-07-31,24351,Raheim Sanders,raheimsanders,RB,CLE,307.31,ecr,00-0040466,fantasypros_id,matched,True
+2026-07-31,18864,Olamide Zaccheaus,olamidezaccheaus,WR,ATL,307.32,ecr,00-0035208,fantasypros_id,matched,True
+2026-07-31,25627,Xavier Smith,xaviersmith,WR,LAR,307.5,ecr,00-0038359,fantasypros_id,matched,True
+2026-07-31,23739,Calvin Austin III,calvinaustin,WR,NYG,307.97,ecr,00-0037837,fantasypros_id,matched,True
+2026-07-31,27147,Tez Johnson,tezjohnson,WR,TB,308.04,ecr,00-0040237,fantasypros_id,matched,True
+2026-07-31,15623,Tyler Higbee,tylerhigbee,TE,LAR,308.18,ecr,00-0033110,fantasypros_id,matched,True
+2026-07-31,27066,Xavier Restrepo,xavierrestrepo,WR,TEN,308.5,ecr,00-0040522,fantasypros_id,matched,True
+2026-07-31,17066,Kendrick Bourne,kendrickbourne,WR,ARI,310.44,ecr,00-0033307,fantasypros_id,matched,True
+2026-07-31,8160,Miami Dolphins,miamidolphins,DST,MIA,310.67,ecr,,unmatched,unmatched,False
+2026-07-31,16548,Zane Gonzalez,zanegonzalez,K,MIA,311.57,ecr,00-0033862,fantasypros_id,matched,False
+2026-07-31,19028,Joey Slye,joeyslye,K,TEN,311.8,ecr,00-0035192,fantasypros_id,matched,False
+2026-07-31,22928,Phil Mafah,philmafah,RB,DAL,311.91,ecr,00-0040021,fantasypros_id,matched,True
+2026-07-31,19624,Antonio Gibson,antoniogibson,RB,FA,312.33,ecr,00-0036328,fantasypros_id,matched,True
+2026-07-31,18656,Ashton Dulin,ashtondulin,WR,IND,312.6,ecr,00-0035021,fantasypros_id,matched,True
+2026-07-31,22905,Treylon Burks,treylonburks,WR,WAS,312.9,ecr,00-0037742,fantasypros_id,matched,True
+2026-07-31,22930,Will Shipley,willshipley,RB,PHI,313.55,ecr,00-0039746,fantasypros_id,matched,True
+2026-07-31,23056,Michael Mayer,michaelmayer,TE,LV,314.19,ecr,00-0039066,fantasypros_id,matched,True
+2026-07-31,27993,Max Klare,maxklare,TE,LAR,314.96,ecr,00-0041510,normalized_name_position,matched,False
+2026-07-31,23014,Donovan Edwards,donovanedwards,RB,MIA,315.0,ecr,00-0040400,fantasypros_id,matched,False
+2026-07-31,17246,Nick Chubb,nickchubb,RB,FA,315.05,ecr,00-0034791,fantasypros_id,matched,True
+2026-07-31,26329,Jawhar Jordan,jawharjordan,RB,HOU,316.22,ecr,00-0039405,fantasypros_id,matched,True
+2026-07-31,19471,Ty Chandler,tychandler,RB,NO,316.75,ecr,00-0037276,fantasypros_id,matched,True
+2026-07-31,23004,Elijah Arroyo,elijaharroyo,TE,SEA,316.82,ecr,00-0040739,fantasypros_id,matched,True
+2026-07-31,25748,Zavier Scott,zavierscott,RB,MIN,317.5,ecr,00-0038440,fantasypros_id,matched,True
+2026-07-31,22728,Michael Carter,michaelcarter,RB,TEN,317.71,ecr,00-0036924,fantasypros_id,matched,True
+2026-07-31,23018,J.J. McCarthy,jjmccarthy,QB,MIN,317.92,ecr,00-0039923,fantasypros_id,matched,True
+2026-07-31,25332,Xavier Hutchinson,xavierhutchinson,WR,HOU,318.29,ecr,00-0038618,fantasypros_id,matched,True
+2026-07-31,18714,Scotty Miller,scottymiller,WR,CHI,318.5,ecr,00-0035298,fantasypros_id,matched,True
+2026-07-31,22833,John Bates,johnbates,TE,WAS,318.6,ecr,00-0036628,fantasypros_id,matched,True
+2026-07-31,25304,DeMario Douglas,demariodouglas,WR,NE,318.69,ecr,00-0038621,fantasypros_id,matched,True
+2026-07-31,28129,Bryce Lance,brycelance,WR,NO,318.71,ecr,00-0041067,normalized_name_position,matched,False
+2026-07-31,25980,Frank Gore Jr.,frankgore,RB,BUF,319.0,ecr,00-0039471,fantasypros_id,matched,False
+2026-07-31,27288,Dont'e Thornton Jr.,dontethornton,WR,LV,319.15,ecr,00-0040581,fantasypros_id,matched,True
+2026-07-31,18520,KaVontae Turpin,kavontaeturpin,WR,DAL,319.3,ecr,00-0037801,fantasypros_id,matched,True
+2026-07-31,24334,Ja'Tavion Sanders,jatavionsanders,TE,CAR,320.0,ecr,00-0039356,fantasypros_id,matched,True
+2026-07-31,28297,Eli Heidenreich,eliheidenreich,RB,PIT,320.17,ecr,00-0041490,normalized_name_position,matched,False
+2026-07-31,22895,John Metchie III,johnmetchie,WR,CAR,320.4,ecr,00-0037614,fantasypros_id,matched,True
+2026-07-31,14338,Raheem Mostert,raheemmostert,RB,LV,320.5,ecr,00-0031687,fantasypros_id,matched,True
+2026-07-31,16081,Kalif Raymond,kalifraymond,WR,CHI,321.5,ecr,00-0032464,fantasypros_id,matched,True
+2026-07-31,17484,Devonte Boyd,devonteboyd,WR,FA,321.5,ecr,,unmatched,unmatched,False
+2026-07-31,19539,Noah Gray,noahgray,TE,KC,322.23,ecr,00-0036637,fantasypros_id,matched,True
+2026-07-31,26194,Dylan Laube,dylanlaube,RB,LV,322.25,ecr,00-0039407,fantasypros_id,matched,True
+2026-07-31,25693,Jacob Saylors,jacobsaylors,RB,DET,322.5,ecr,00-0038896,fantasypros_id,matched,True
+2026-07-31,23986,Ronnie Rivers,ronnierivers,RB,LAR,322.5,ecr,00-0037557,fantasypros_id,matched,True
+2026-07-31,28124,Cash Jones,cashjones,RB,ATL,323.67,ecr,00-0041191,normalized_name_position,matched,False
+2026-07-31,16483,Austin Ekeler,austinekeler,RB,FA,323.69,ecr,00-0033699,fantasypros_id,matched,True
+2026-07-31,25167,Tommy Myers,tommymyers,TE,FA,323.83,ecr,,unmatched,unmatched,False
+2026-07-31,19229,Cole Kmet,colekmet,TE,CHI,324.0,ecr,00-0036290,fantasypros_id,matched,True
+2026-07-31,18557,Jake Browning,jakebrowning,QB,TB,324.5,ecr,00-0035100,fantasypros_id,matched,True
+2026-07-31,26037,Colbie Young,colbieyoung,WR,CIN,324.75,ecr,00-0041069,normalized_name_position,matched,False
+2026-07-31,22813,Elijah Mitchell,elijahmitchell,RB,PHI,325.0,ecr,00-0036567,fantasypros_id,matched,True
+2026-07-31,16445,Jeremy McNichols,jeremymcnichols,RB,WAS,325.5,ecr,00-0033955,fantasypros_id,matched,True
+2026-07-31,18283,Miles Sanders,milessanders,RB,FA,325.6,ecr,00-0035243,fantasypros_id,matched,True
+2026-07-31,27798,Ben Sauls,bensauls,K,NYG,326.33,ecr,,unmatched,unmatched,False
+2026-07-31,26011,Devontez Walker,devontezwalker,WR,BAL,327.33,ecr,00-0039792,fantasypros_id,matched,True
+2026-07-31,25354,Chad Ryland,chadryland,K,ARI,327.83,ecr,00-0038567,fantasypros_id,matched,False
+2026-07-31,14104,Darren Waller,darrenwaller,TE,FA,328.13,ecr,00-0031610,fantasypros_id,matched,True
+2026-07-31,26964,Terrell Jennings,terrelljennings,RB,NE,328.5,ecr,00-0039757,fantasypros_id,matched,True
+2026-07-31,19844,Reggie Gilliam,reggiegilliam,RB,NE,329.0,ecr,00-0036187,fantasypros_id,matched,True
+2026-07-31,28133,Brenen Thompson,brenenthompson,WR,LAC,329.88,ecr,00-0041550,normalized_name_position,matched,False
+2026-07-31,20155,Jaret Patterson,jaretpatterson,RB,LAC,330.8,ecr,00-0036755,fantasypros_id,matched,True
+2026-07-31,28109,J'Mari Taylor,jmaritaylor,RB,JAC,330.88,ecr,00-0041217,normalized_name_position,matched,False
+2026-07-31,18631,Dawson Knox,dawsonknox,TE,BUF,331.4,ecr,00-0035689,fantasypros_id,matched,True
+2026-07-31,11606,DeAndre Hopkins,deandrehopkins,WR,BAL,331.67,ecr,00-0030564,fantasypros_id,matched,True
+2026-07-31,28067,Kevin Coleman Jr.,kevincoleman,WR,MIA,331.85,ecr,00-0041529,normalized_name_position,matched,False
+2026-07-31,23837,Erick All Jr.,erickall,TE,CIN,331.94,ecr,00-0039814,fantasypros_id,matched,False
+2026-07-31,8220,Las Vegas Raiders,lasvegasraiders,DST,LV,332.0,ecr,,unmatched,unmatched,False
+2026-07-31,18561,Drew Sample,drewsample,TE,CIN,332.33,ecr,00-0035631,fantasypros_id,matched,True
+2026-07-31,22953,Carson Beck,carsonbeck,QB,ARI,332.68,ecr,00-0041561,fantasypros_id,matched,False
+2026-07-31,28757,Elijah Tau-Tolliver,elijahtautolliver,RB,BAL,333.0,ecr,,unmatched,unmatched,False
+2026-07-31,22756,Charlie Kolar,charliekolar,TE,LAC,333.2,ecr,00-0038046,fantasypros_id,matched,True
+2026-07-31,20126,Tutu Atwell,tutuatwell,WR,MIA,333.6,ecr,00-0036849,fantasypros_id,matched,True
+2026-07-31,25394,Jaydn Ott,jaydnott,RB,KC,333.6,ecr,00-0040959,normalized_name_position,matched,False
+2026-07-31,28132,Zavion Thomas,zavionthomas,WR,CHI,334.75,ecr,00-0041051,normalized_name_position,matched,False
+2026-07-31,28424,Cyrus Allen,cyrusallen,WR,KC,335.0,ecr,00-0040890,normalized_name_position,matched,False
+2026-07-31,20156,Mac Jones,macjones,QB,SF,335.14,ecr,00-0036972,fantasypros_id,matched,True
+2026-07-31,27810,Jahdae Walker,jahdaewalker,WR,CHI,337.0,ecr,00-0040277,fantasypros_id,matched,True
+2026-07-31,24347,Anthony Richardson Sr.,anthonyrichardson,QB,IND,337.27,ecr,00-0039164,fantasypros_id,matched,True
+2026-07-31,19747,Nick Westbrook-Ikhine,nickwestbrookikhine,WR,IND,337.33,ecr,00-0036182,fantasypros_id,matched,True
+2026-07-31,25967,Joe Milton III,joemilton,QB,DAL,337.88,ecr,00-0039398,fantasypros_id,matched,True
+2026-07-31,27454,Jaylin Lane,jaylinlane,WR,WAS,339.19,ecr,00-0040164,fantasypros_id,matched,True
+2026-07-31,11689,Zach Ertz,zachertz,TE,FA,339.43,ecr,00-0030061,fantasypros_id,matched,True
+2026-07-31,17527,Noah Fant,noahfant,TE,NO,339.5,ecr,00-0035644,fantasypros_id,matched,True
+2026-07-31,17115,Taysom Hill,taysomhill,TE,FA,339.67,ecr,00-0033357,fantasypros_id,matched,True
+2026-07-31,22947,Dameon Pierce,dameonpierce,RB,PHI,340.7,ecr,00-0037258,fantasypros_id,matched,True
+2026-07-31,26012,Malik Benson,malikbenson,WR,LV,341.0,ecr,00-0040894,normalized_name_position,matched,False
+2026-07-31,25387,Roman Hemby,romanhemby,RB,LV,342.0,ecr,00-0040998,normalized_name_position,matched,False
+2026-07-31,28079,Justin Joly,justinjoly,TE,DEN,342.44,ecr,00-0041077,fantasypros_id,matched,False
+2026-07-31,19781,Justin Fields,justinfields,QB,KC,342.56,ecr,00-0036945,fantasypros_id,matched,True
+2026-07-31,25322,Roschon Johnson,roschonjohnson,RB,CHI,343.0,ecr,00-0039021,fantasypros_id,matched,True
+2026-07-31,25368,Ty Simpson,tysimpson,QB,LAR,343.18,ecr,SIM639376,normalized_name_position,matched,False
+2026-07-31,25373,Riley Leonard,rileyleonard,QB,IND,343.67,ecr,00-0040206,fantasypros_id,matched,True
+2026-07-31,20113,Dyami Brown,dyamibrown,WR,WAS,343.78,ecr,00-0036626,fantasypros_id,matched,True
+2026-07-31,19483,Van Jefferson,vanjefferson,WR,WAS,344.5,ecr,00-0036415,fantasypros_id,matched,True
+2026-07-31,15581,Austin Hooper,austinhooper,TE,ATL,345.0,ecr,00-0032392,fantasypros_id,matched,True
+2026-07-31,17826,Tanner Hudson,tannerhudson,TE,CIN,346.0,ecr,00-0034613,fantasypros_id,matched,True
+2026-07-31,28154,Eli Raridon,eliraridon,TE,NE,347.12,ecr,00-0041395,normalized_name_position,matched,False
+2026-07-31,27144,Savion Williams,savionwilliams,WR,GB,347.38,ecr,00-0040009,fantasypros_id,matched,True
+2026-07-31,18562,Gardner Minshew II,gardnerminshew,QB,ARI,347.8,ecr,00-0035289,fantasypros_id,matched,True
+2026-07-31,13890,Marcus Mariota,marcusmariota,QB,WAS,350.0,ecr,00-0032268,fantasypros_id,matched,True
+2026-07-31,16460,Jonnu Smith,jonnusmith,TE,FA,350.0,ecr,00-0033858,fantasypros_id,matched,True
+2026-07-31,26310,Ben Sinnott,bensinnott,TE,WAS,350.36,ecr,00-0039912,fantasypros_id,matched,True
+2026-07-31,18585,Greg Dortch,gregdortch,WR,DET,350.71,ecr,00-0035500,fantasypros_id,matched,True
+2026-07-31,20114,Elijah Moore,elijahmoore,WR,PHI,351.0,ecr,00-0036980,fantasypros_id,matched,True
+2026-07-31,28404,Robert Henry Jr.,roberthenry,RB,WAS,351.0,ecr,00-0041178,normalized_name_position,matched,False
+2026-07-31,27222,Theo Wease Jr.,theowease,WR,MIA,351.5,ecr,00-0040311,fantasypros_id,matched,True
+2026-07-31,9300,Joe Flacco,joeflacco,QB,CIN,351.63,ecr,00-0026158,fantasypros_id,matched,True
+2026-07-31,27326,Jam Miller,jammiller,RB,NE,351.71,ecr,00-0041129,normalized_name_position,matched,False
+2026-07-31,13891,Jameis Winston,jameiswinston,QB,NYG,352.0,ecr,00-0031503,fantasypros_id,matched,True
+2026-07-31,25282,Luke Musgrave,lukemusgrave,TE,GB,353.67,ecr,00-0039144,fantasypros_id,matched,True
+2026-07-31,17508,Durham Smythe,durhamsmythe,TE,BAL,354.0,ecr,00-0034798,fantasypros_id,matched,True
+2026-07-31,18049,Will Dissly,willdissly,TE,FA,354.67,ecr,00-0034159,fantasypros_id,matched,True
+2026-07-31,22795,Tommy Tremble,tommytremble,TE,CAR,354.91,ecr,00-0037005,fantasypros_id,matched,True
+2026-07-31,28896,Roman Wilson,romanwilson,WR,PIT,355.5,ecr,00-0039739,normalized_name_position,matched,True
+2026-07-31,8210,New York Jets,newyorkjets,DST,NYJ,356.0,ecr,,unmatched,unmatched,False
+2026-07-31,28161,Sam Roush,samroush,TE,CHI,356.5,ecr,00-0041558,normalized_name_position,matched,False
+2026-07-31,19268,Cam Akers,camakers,RB,FA,357.0,ecr,00-0036414,fantasypros_id,matched,True
+2026-07-31,23135,Jordan Whittington,jordanwhittington,WR,LAR,359.1,ecr,00-0039751,fantasypros_id,matched,True
+2026-07-31,28427,Nate Boerkircher,nateboerkircher,TE,JAC,359.5,ecr,00-0041503,normalized_name_position,matched,False
+2026-07-31,15665,Demarcus Robinson,demarcusrobinson,WR,SF,359.75,ecr,00-0032775,fantasypros_id,matched,True
+2026-07-31,28125,CJ Daniels,cjdaniels,WR,LAR,360.2,ecr,00-0041399,normalized_name_position,matched,False
+2026-07-31,18487,Josh Oliver,josholiver,TE,MIN,360.2,ecr,00-0035249,fantasypros_id,matched,True
+2026-07-31,27093,Deion Burks,deionburks,WR,IND,360.22,ecr,00-0041132,normalized_name_position,matched,False
+2026-07-31,23167,Michael Trigg,michaeltrigg,TE,DAL,360.25,ecr,00-0040939,normalized_name_position,matched,False
+2026-07-31,24361,Cade Klubnik,cadeklubnik,QB,NYJ,360.33,ecr,00-0041056,normalized_name_position,matched,False
+2026-07-31,28157,Marlin Klein,marlinklein,TE,HOU,360.4,ecr,00-0041472,normalized_name_position,matched,False
+2026-07-31,26343,Jared Wiley,jaredwiley,TE,KC,361.0,ecr,00-0039824,fantasypros_id,matched,True
+2026-07-31,23341,Brock Wright,brockwright,TE,DET,362.5,ecr,00-0036754,fantasypros_id,matched,True
+2026-07-31,23119,Elijah Higgins,elijahhiggins,TE,ARI,363.13,ecr,00-0039041,fantasypros_id,matched,True
+2026-07-31,28450,Myles Montgomery,mylesmontgomery,RB,NE,363.2,ecr,00-0041323,normalized_name_position,matched,False
+2026-07-31,25269,Cade Stover,cadestover,TE,HOU,363.33,ecr,00-0039359,fantasypros_id,matched,True
+2026-07-31,27138,Mitchell Evans,mitchellevans,TE,CAR,363.5,ecr,00-0040187,fantasypros_id,matched,True
+2026-07-31,25267,Luke Schoonmaker,lukeschoonmaker,TE,DAL,364.33,ecr,00-0038547,fantasypros_id,matched,True
+2026-07-31,16579,Mo Alie-Cox,moaliecox,TE,IND,364.75,ecr,00-0033217,fantasypros_id,matched,True
+2026-07-31,23680,Quinn Ewers,quinnewers,QB,MIA,365.0,ecr,00-0040234,fantasypros_id,matched,True
+2026-07-31,25976,Damien Martinez,damienmartinez,RB,GB,368.5,ecr,00-0040651,fantasypros_id,matched,False
+2026-07-31,24238,Daniel Bellinger,danielbellinger,TE,TEN,370.38,ecr,00-0038115,fantasypros_id,matched,True
+2026-07-31,17598,Tyler Conklin,tylerconklin,TE,DET,371.0,ecr,00-0034270,fantasypros_id,matched,True
+2026-07-31,27294,Jimmy Horn Jr.,jimmyhorn,WR,CAR,376.5,ecr,00-0040218,fantasypros_id,matched,True
+2026-07-31,23093,Moliki Matavao,molikimatavao,TE,NO,377.5,ecr,00-0040244,fantasypros_id,matched,True
+2026-07-31,19423,Adam Trautman,adamtrautman,TE,DEN,379.0,ecr,00-0036422,fantasypros_id,matched,True
+2026-07-31,20082,Trey Lance,treylance,QB,LAC,381.5,ecr,00-0037012,fantasypros_id,matched,True
+2026-07-31,17533,Jason Sanders,jasonsanders,K,NYJ,383.0,ecr,00-0034794,fantasypros_id,matched,False
+2026-07-31,23039,Thomas Fidone II,thomasfidone,TE,NYG,383.33,ecr,00-0040225,fantasypros_id,matched,True
+2026-07-31,22722,Kenny Pickett,kennypickett,QB,CAR,383.5,ecr,00-0038102,fantasypros_id,matched,True
+2026-07-31,22956,Jermaine Burton,jermaineburton,WR,FA,388.5,ecr,00-0039810,fantasypros_id,matched,False
+2026-07-31,17528,Marquez Valdes-Scantling,marquezvaldesscantling,WR,DAL,411.5,ecr,00-0034272,fantasypros_id,matched,True
+2026-07-31,25289,Jacob Cowing,jacobcowing,WR,SF,415.5,ecr,00-0039365,fantasypros_id,matched,False
+2026-07-31,27182,Tai Felton,taifelton,WR,MIN,417.0,ecr,00-0040154,fantasypros_id,matched,True
